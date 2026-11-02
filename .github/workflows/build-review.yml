@@ -1,0 +1,23 @@
+name: Unsigned local build review
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: skwd-unsigned-build
+  cancel-in-progress: false
+jobs:
+  build:
+    # Deliberately disabled until the owner provisions/reviews an ephemeral VM.
+    if: github.ref == 'refs/heads/main' && vars.ENABLE_BINARY_BUILD == 'true'
+    environment: build-review
+    runs-on: [self-hosted, linux, x64, skwd-void-glibc-ephemeral]
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Fresh public-source build without signing/publishing secrets
+        run: scripts/build-candidate.sh "$RUNNER_TEMP/skwd-candidate-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT"
+      # No binary upload: current licensing gate has NOT cleared distribution.
+      # Export reviewed unsigned output through a separate approved procedure.

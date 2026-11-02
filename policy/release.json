@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "repository": "SirOtter0/skwd-void-repo",
+  "architecture": "x86_64",
+  "libc": "glibc",
+  "port_repository": "https://github.com/SirOtter0/skwd-wall.git",
+  "port_commit": "466e95c608b37000491633bdbec6ca801a059714",
+  "package_version": "1.0.0beta26_3",
+  "packages": ["skwd-wall-v2-local", "skwd-deck-local", "skwd-lens-local", "skwd-paper-local"],
+  "source_date_epoch": 1792079636,
+  "rust_version": "1.99.0",
+  "distribution_approved": false,
+  "license_review": {
+    "approved": false,
+    "reviewer": null,
+    "evidence": null,
+    "approved_candidate_sha256": null,
+    "blockers": [
+      "Complete per-dependency notices/copyrights and asset attribution in binary packages; generic license texts alone are insufficient.",
+      "Confirm source-mirror redistribution terms for optional Steamworks SDK/prebuilt vendor inputs; do not infer Valve SDK rights from the Rust wrapper MIT license.",
+      "Include FFmpeg IJG attribution, actual configuration and patchelf change/relink notes with corresponding source delivery."
+    ]
+  },
+  "signing": {"public_key_spki_sha256": null, "xbps_md5_fingerprint": null, "identity": null},
+  "hosting": {"testing_url": null, "stable_url": null, "public_key_url": null}
+}

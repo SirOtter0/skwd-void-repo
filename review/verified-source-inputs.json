@@ -1,0 +1,25 @@
+{
+  "ffmpeg": {
+    "version": "9.0.1",
+    "path": "vendor-ffmpeg/ffmpeg-9.0.1.tar.xz",
+    "sha256": "cf38e0e28c7e5605942c4a77755349b0145804a397af37eb1fb4c77cb237f635"
+  },
+  "original_archive_sha256": "681f81332824657307201c922cbe5c4566267d4ceb5a507647d37b6c35b49b46",
+  "commits": {
+    "wall": "780f2d3f53025318cbbaff1d1aa369e622e5e8fd",
+    "deck": "3e8df6dd517e676b6474c0e24bd9a4ce2d28fdc3",
+    "lens": "89c62da9e420669d0e0c5603b36e2fc0f7b691e5",
+    "paper": "d7cbbbf403036a071e005a53ffc2c4da036a68de"
+  },
+  "locks": {
+    "wall": "77c0f9567038f0bf58b89a80238cb5814365dc9e5f1f3ada607f845193404a2f",
+    "deck": "60e0c37aafacd698b0167a606329a9e70f37e792c1a2e4939ce5c832fa595546",
+    "lens": "295f48999af55e416ec3c70ff071245cb401c58ab20097b5457492a6bbcdf116",
+    "paper": "2e8bc152dd080ae9f7a4c83cca2db9c88ce444aa67d6236e2e36c3b2edf9dcdd"
+  },
+  "patches": {
+    "skwd-deck.patch": "733cd4b577d7ccbc02bb3d7d012568b222e020f118c000c44b40618002227833",
+    "skwd-paper.patch": "f63046db7ea5c24d61e2d9a206f55d9e2a1702255b47f2b45511a111411c5fdb",
+    "skwd-lens.patch": "58fff5e645c750e3e3d0c18c4314ed223a69ecb20f347c7f593dccdea557dc9f"
+  }
+}

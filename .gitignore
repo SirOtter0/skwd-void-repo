@@ -1,0 +1,11 @@
+work/
+out/
+site/
+*.xbps
+*.sig2
+*.qcow2
+*.pem
+*.key
+*.p12
+*.pfx
+__pycache__/

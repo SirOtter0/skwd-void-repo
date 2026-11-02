@@ -1,0 +1,72 @@
+[
+  {
+    "file": "skwd-deck-local-1.0.0beta26_3.x86_64.xbps",
+    "name": "skwd-deck-local",
+    "version": "skwd-deck-local-1.0.0beta26_3",
+    "sha256": "05cd1e8776643257c5bb6ce566dc1752deb517f510f5968eb781d0fd3c21db9d",
+    "bytes": 41288490,
+    "dependencies": [
+      "glibc>=2.41_1",
+      "libgcc>=14.2.1+20250405_4",
+      "skwd-paper-local-1.0.0beta26_3"
+    ],
+    "license": "MIT, Apache-2.0, MPL-2.0, WTFPL",
+    "archive_entries": 35
+  },
+  {
+    "file": "skwd-lens-local-1.0.0beta26_3.x86_64.xbps",
+    "name": "skwd-lens-local",
+    "version": "skwd-lens-local-1.0.0beta26_3",
+    "sha256": "42448b8f31b13e40f596739881804937731535338972dd08a12771c22cc8eb43",
+    "bytes": 2060710,
+    "dependencies": [
+      "glibc>=2.41_1",
+      "libgcc>=14.2.1+20250405_4"
+    ],
+    "license": "MIT, Apache-2.0, CC-BY-4.0",
+    "archive_entries": 7
+  },
+  {
+    "file": "skwd-paper-local-1.0.0beta26_3.x86_64.xbps",
+    "name": "skwd-paper-local",
+    "version": "skwd-paper-local-1.0.0beta26_3",
+    "sha256": "c4bf5b1cc5f13f040db051b7b8b7be4db4f567193f2f56a56e3c3ba0d4eea275",
+    "bytes": 27781292,
+    "dependencies": [
+      "alsa-lib>=1.2.16.1_1",
+      "glibc>=2.41_1",
+      "libdav1d>=1.5.3_1",
+      "libdrm>=2.4.134_1",
+      "libgcc>=14.2.1+20250405_4",
+      "libglvnd>=1.7.0_1",
+      "libva>=2.24.1_1",
+      "libyuv>=0.0.1922.20251020_1",
+      "shaderc>=2026.4_2",
+      "vulkan-loader>=1.4.363.0_1",
+      "wayland>=1.26.0_1",
+      "zlib>=1.3.2_1"
+    ],
+    "license": "MIT, LGPL-2.1-or-later, BSD-2-Clause, BSD-3-Clause, WTFPL",
+    "archive_entries": 27
+  },
+  {
+    "file": "skwd-wall-v2-local-1.0.0beta26_3.x86_64.xbps",
+    "name": "skwd-wall-v2-local",
+    "version": "skwd-wall-v2-local-1.0.0beta26_3",
+    "sha256": "1105a50ac7cbb99b39f16a47206acdc2647512022164192b678b9070e5ec7902",
+    "bytes": 10503123,
+    "dependencies": [
+      "fontconfig>=2.17.1_1",
+      "glibc>=2.41_1",
+      "libgcc>=14.2.1+20250405_4",
+      "libglvnd>=1.7.0_1",
+      "libxkbcommon>=1.13.2_1",
+      "skwd-deck-local-1.0.0beta26_3",
+      "skwd-paper-local-1.0.0beta26_3",
+      "vulkan-loader>=1.4.363.0_1",
+      "wayland>=1.26.0_1"
+    ],
+    "license": "MIT, Apache-2.0, MPL-2.0, OFL-1.1, CC-BY-4.0, Zlib",
+    "archive_entries": 14
+  }
+]
