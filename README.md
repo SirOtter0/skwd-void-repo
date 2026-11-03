@@ -1,45 +1,74 @@
-# Skwd Void community repository — preparation
+# Skwd-wall v2 for Void Linux
 
-Infrastructure for an **unofficial** XBPS binary distribution of Skwd-wall v2 for
-**Void Linux x86_64 glibc + runit**. Independent of official Void repositories and
-upstream Skwd releases. No upstream PR is opened by this project.
+**Unofficial community packaging infrastructure** for [Skwd-wall](https://github.com/liixini/skwd-wall) v2 on **Void Linux x86_64 (glibc + runit)**.
 
-**No signed channel is published. No release key exists. Do not install from a
-placeholder URL.** Binary distribution remains blocked by the licensing review;
-the current workflows do not publish or upload application binaries.
+> [!WARNING]
+> **Not ready for installation.** No signed repository channel has been published, no release signing key exists, and no public application binaries are distributed by this repository. Do not install packages from placeholder URLs or treat passing CI as release approval.
 
-The pinned public port is
-[SirOtter0/skwd-wall](https://github.com/SirOtter0/skwd-wall/tree/feat/void-linux-support).
-Four compatible package names are preserved: skwd-wall-v2-local, skwd-deck-local,
-skwd-lens-local, skwd-paper-local (current reviewed revision1.0.0beta26_3).
+This repository prepares a separately maintained XBPS distribution workflow. It is **not** an official Void Linux repository or an upstream Skwd release. The port sources are maintained in [SirOtter0/skwd-wall (`feat/void-linux-support`)](https://github.com/SirOtter0/skwd-wall/tree/feat/void-linux-support). No upstream pull request has been opened by this project.
 
-## Prepared
+## Project status
 
-* Public-source, unprivileged offline build orchestration using pinned port recipes.
-* Static package/architecture/dependency/payload checks and source/provenance records.
-* Candidate-bound licensing approval gate; no automatic clearance from compilation.
-* Manual offline RSA/XBPS signing and an additional signed release manifest.
-* Testing-first local promotion, immutable signed-byte verification and stable approval.
-* Read-only hosted infrastructure CI; optional disabled ephemeral-VM build workflow.
-* Pages deployment example kept inactive outside the workflow directory.
+| Area | Status |
+| --- | --- |
+| Pinned public-source build orchestration | Prepared |
+| Package, architecture, dependency and payload checks | Prepared |
+| Source and provenance records | Prepared |
+| Licensing approval gate | Implemented; distribution review pending |
+| Offline signing and signed manifest workflow | Prepared; no release key created |
+| Testing-to-stable promotion and signed-byte verification | Prepared; no public channel |
+| Infrastructure CI | Available; checks passing in the latest reported run (16 tests) |
+| Public binary releases | **Blocked** |
+| End-user installation | **Not supported yet** |
 
-## Review before first publication
+The passing test count describes infrastructure checks, **not** complete runtime, graphical, security or distribution acceptance.
 
-1. Complete [distribution licensing/notices/source review](docs/LICENSING.md).
-2. Review the [builder and clean VM acceptance](docs/BUILD.md).
+## Target platform and packages
+
+- **Distribution:** Void Linux, x86_64 glibc, using runit (not systemd).
+- **Desktop target:** Wayland, including Niri; graphical compatibility still requires final validation.
+- **Components:** Wall, Deck, Lens and Paper.
+- **Local package names:** `skwd-wall-v2-local`, `skwd-deck-local`, `skwd-lens-local`, `skwd-paper-local`.
+- **Current reviewed package revision:** `1.0.0beta26_3`.
+
+These are **targets and preparation details**, not a declaration of tested end-user compatibility.
+
+## What is prepared
+
+- Unprivileged offline build orchestration using pinned public port recipes.
+- Static package, architecture, dependency and payload inspection.
+- Candidate-bound licensing approval gate; compilation never grants distribution clearance.
+- Manual offline RSA/XBPS signing and an additional signed release manifest.
+- Testing-first promotion with immutable signed-byte verification and explicit stable approval.
+- Read-only hosted infrastructure CI; optional ephemeral-VM build workflow disabled by default.
+- Pages deployment example, not activated for publication.
+
+## Before the first public release
+
+1. Complete the [distribution licensing, notices and source review](docs/LICENSING.md).
+2. Review [builder and clean-VM acceptance](docs/BUILD.md), including relevant runtime and graphical checks.
 3. Approve the [key ceremony and signing procedure](docs/KEYS.md).
-4. Approve [hosting and deployment](docs/HOSTING.md), configure protected environments.
-5. Obtain the owner's explicit authorization to publish the first signed testing channel.
-6. Verify the actual public HTTPS endpoint, then complete [installation documentation](docs/USERS.md).
+4. Approve [hosting and deployment](docs/HOSTING.md) and configure protected environments.
+5. Obtain the repository owner's explicit authorization for the first signed testing publication.
+6. Verify the actual public HTTPS repository endpoint and finalize [end-user installation instructions](docs/USERS.md).
 
-`policy/release.json` is intentionally fail-closed. Never remove blockers merely
-to make CI green. The verifier tests can run without keys or XBPS installation:
+`policy/release.json` is intentionally **fail-closed**. Do not remove blockers merely to make CI pass.
 
-```
+## Run infrastructure checks
+
+The following checks do not require release signing keys or installation of XBPS packages:
+
+```sh
 python3 -m unittest discover -s tests -v
 bash -n scripts/build-candidate.sh
 ```
 
-No proprietary models, personal configurations, binaries, signing secrets or
-workstation paths belong in Git. Scripts here are MIT; upstream packages, sources,
-assets and dependencies retain their respective licenses. See LICENSE.
+They do not replace clean-VM acceptance, licensing clearance or testing on the target desktop.
+
+## Upstream, credits and licensing
+
+Skwd-wall is developed by [liixini](https://github.com/liixini/skwd-wall). This repository is an independent community packaging effort, not an official upstream distribution channel.
+
+Scripts in this repository are MIT-licensed. Upstream code, packages, assets and dependencies retain their respective licenses; see [LICENSE](LICENSE) and [distribution review](docs/LICENSING.md).
+
+Do not commit proprietary models, personal configurations, built application binaries, signing secrets or workstation-specific paths.
