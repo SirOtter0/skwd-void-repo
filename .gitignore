@@ -9,3 +9,6 @@ site/
 *.p12
 *.pfx
 __pycache__/
+
+# Only this reviewed PUBLIC key may be versioned.
+!/keys/skwd-void-xbps-public.pem

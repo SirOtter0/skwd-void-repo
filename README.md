@@ -3,7 +3,7 @@
 **Unofficial community packaging infrastructure** for [Skwd-wall](https://github.com/liixini/skwd-wall) v2 on **Void Linux x86_64 (glibc + runit)**.
 
 > [!WARNING]
-> **Not ready for installation.** No signed repository channel has been published, no release signing key exists, and no public application binaries are distributed by this repository. Do not install packages from placeholder URLs or treat passing CI as release approval.
+> **Not ready for installation.** No signed repository channel has been published, the production key has been generated and backed up, but no release has been signed, and no public application binaries are distributed by this repository. Do not install packages from placeholder URLs or treat passing CI as release approval.
 
 This repository prepares a separately maintained XBPS distribution workflow. It is **not** an official Void Linux repository or an upstream Skwd release. The port sources are maintained in [SirOtter0/skwd-wall (`feat/void-linux-support`)](https://github.com/SirOtter0/skwd-wall/tree/feat/void-linux-support). No upstream pull request has been opened by this project.
 
@@ -19,7 +19,7 @@ and removal. Definitive keys and public binary distribution remain unauthorized.
 | Package, architecture, dependency and payload checks | Prepared |
 | Source and provenance records | Prepared |
 | Licensing approval gate | Implemented; revision4 review completed; production candidate review required |
-| Offline signing and signed manifest workflow | Prepared; no release key created |
+| Offline signing and signed manifest workflow | Prepared; production key backed up; signing pending |
 | Testing-to-stable promotion and signed-byte verification | Prepared; no public channel |
 | Infrastructure CI | Available; checks passing in the latest reported run (25 local tests) |
 | Public binary releases | **Blocked** |
@@ -76,3 +76,7 @@ Skwd-wall is developed by [liixini](https://github.com/liixini/skwd-wall). This 
 Scripts in this repository are MIT-licensed. Upstream code, packages, assets and dependencies retain their respective licenses; see [LICENSE](LICENSE) and [distribution review](docs/LICENSING.md).
 
 Do not commit proprietary models, personal configurations, built application binaries, signing secrets or workstation-specific paths.
+
+The production public identity is recorded in [KEYS.md](docs/KEYS.md). Release
+preparation is [on hold for the beta.27 integration](docs/BETA27-HANDOFF.md); no
+beta.26 production candidate will be finalized in the meantime.

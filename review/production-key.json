@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "purpose": "Production XBPS repository public identity; no production signing performed",
+  "identity": "Skwd-wall Void community XBPS repository (SirOtter0)",
+  "public_key_file": "keys/skwd-void-xbps-public.pem",
+  "spki_sha256": "3860084bca30b2022dd851490ba2f920524feb1dd38b578f69252e0a76e9d987",
+  "xbps_md5_fingerprint": "cb:49:33:d0:b1:e9:be:a6:3d:85:96:11:04:c4:50:e8",
+  "private_key_encrypted": true,
+  "backup_ciphertexts_match": true,
+  "backup_recovery": "Owner confirmed local script successfully decrypted and matched public identities from both backups",
+  "internal_copy": true,
+  "external_copy": true,
+  "swap_restored": true,
+  "distribution_approved": false,
+  "independent_fingerprint_announcement": "PENDING: publish through a separately controlled authenticated channel"
+}
