@@ -125,15 +125,35 @@ def gate(policy, candidate_path):
         raise ValueError('Approved signing identity not configured')
 
 
+def rsa_ssh_blob(der):
+    """Encode OpenSSL-validated PKCS#1 public integers as RFC4251 ssh-rsa."""
+    def tlv(data, position, expected):
+        if position + 2 > len(data) or data[position] != expected:
+            raise ValueError('Invalid public DER tag')
+        size = data[position + 1]; position += 2
+        if size & 0x80:
+            count = size & 0x7f
+            if count == 0 or count > 4 or position + count > len(data):
+                raise ValueError('Invalid public DER length')
+            size = int.from_bytes(data[position:position+count], 'big'); position += count
+        if position + size > len(data):raise ValueError('Truncated public DER')
+        return data[position:position+size], position+size
+    sequence, end = tlv(der, 0, 0x30)
+    if end != len(der):raise ValueError('Extra public DER data')
+    modulus, position = tlv(sequence, 0, 2)
+    exponent, end = tlv(sequence, position, 2)
+    if end != len(sequence) or not modulus or not exponent or modulus[0]&0x80 or exponent[0]&0x80:
+        raise ValueError('Invalid RSA public integers')
+    def string(value):return len(value).to_bytes(4, 'big')+value
+    return string(b'ssh-rsa')+string(exponent)+string(modulus)
+
+
 def public_identity(public):
     der = subprocess.check_output(['openssl', 'pkey', '-pubin', '-in', str(public), '-outform', 'DER'])
-    ssh = subprocess.check_output(['ssh-keygen', '-i', '-m', 'PKCS8', '-f', str(public)])
-    with tempfile.TemporaryDirectory(prefix='skwd-public-key-') as directory:
-        path = Path(directory) / 'public.ssh'
-        path.write_bytes(ssh)
-        line = subprocess.check_output(['ssh-keygen', '-lf', str(path), '-E', 'md5'], text=True)
+    rsa = subprocess.check_output(['openssl', 'rsa', '-pubin', '-in', str(public), '-RSAPublicKey_out', '-outform', 'DER'], stderr=subprocess.PIPE)
+    fingerprint = hashlib.md5(rsa_ssh_blob(rsa), usedforsecurity=False).digest()
     return {'spki_sha256': hashlib.sha256(der).hexdigest(),
-            'xbps_md5_fingerprint': line.split()[1].removeprefix('MD5:')}
+            'xbps_md5_fingerprint': ':'.join(f'{byte:02x}' for byte in fingerprint)}
 
 
 def verify(directory, expected_key):

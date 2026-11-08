@@ -18,8 +18,9 @@ class RepositoryTests(unittest.TestCase):
 
     def package(self, directory, extra=None, arch='x86_64', deps=None):
         name = 'skwd-lens-local'
-        p = Path(directory) / (name + '-1.0.0beta26_3.x86_64.xbps')
-        props = {'architecture': arch, 'pkgname': name, 'pkgver': name + '-1.0.0beta26_3', 'run_depends': deps or []}
+        version = self.policy()['package_version']
+        p = Path(directory) / (name + '-' + version + '.x86_64.xbps')
+        props = {'architecture': arch, 'pkgname': name, 'pkgver': name + '-' + version, 'run_depends': deps or []}
         with tarfile.open(p, 'w') as t:
             for path, value in [('props.plist', plistlib.dumps(props)), ('usr/bin/skwd-lens', b'not-executed'), *(([extra]) if extra else [])]:
                 entry = tarfile.TarInfo(path); entry.size = len(value)

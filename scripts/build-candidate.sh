@@ -39,14 +39,13 @@ mkdir "$work/build"
 for component in wall deck lens paper; do
  packaging/void/build.sh "$work/source/suite" "$work/build/$component" "$component"
 done
-SOURCE_DATE_EPOCH=1792079636 python3 packaging/void/package.py --build-root "$work/build" --output "$work/packages"
+SOURCE_DATE_EPOCH=1792079636 python3 packaging/void/package.py --build-root "$work/build" --output "$work/packages-base"
+python3 "$infra/scripts/build-closure.py" "$work/build" "$work/actual-build-closure.json"
+python3 "$infra/scripts/repack-notices.py" "$work/packages-base/repository" "$work/source/suite" "$work/actual-build-closure.json" "$work/packages" --build-inventory "$work/packages-base/packages.json"
 python3 "$infra/scripts/repository.py" inspect "$work/packages/repository" > "$work/package-inspection.json"
-# Source archive is prepared locally for review, not uploaded or published.
-# It contains the exact patched vendor/sources, FFmpeg source and public recipes.
-mkdir "$work/source-delivery"
-git archive HEAD | tar xf - -C "$work/source-delivery"
-cp "$work/source/sources.json" "$work/source-delivery/PREPARED-SOURCES.json"
-tar --sort=name --mtime=@1792079636 --owner=0 --group=0 --numeric-owner -cJf "$work/corresponding-source.tar.xz" -C "$work/source" suite -C "$work/source-delivery" .
+# Full source delivery: exact patched suite, public recipes, legal/source records.
+git archive --format=tar.gz -o "$work/port-recipes.tar.gz" HEAD LICENSE packaging/void security/void-beta26
+python3 "$infra/scripts/prepare-public-source.py" "$work/source/suite" "$work/actual-build-closure.json" "$work/corresponding-source" --port-recipes "$work/port-recipes.tar.gz"
 python3 - "$work" <<'PROVENANCE'
 import pathlib,json,sys
 r=pathlib.Path(sys.argv[1]); data={'build_packages':(r/'build-packages.txt').read_text().splitlines(),'kernel':(r/'kernel.txt').read_text().strip(),'tool_versions':{p.name.removesuffix('-version.txt'):p.read_text().strip() for p in r.glob('*-version.txt')}}

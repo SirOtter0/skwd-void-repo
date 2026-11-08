@@ -1,6 +1,9 @@
 # Signing design — no release key created
 
 No definitive key has been generated, imported into CI or used by this repository.
+The owner-authorized disposable RSA4096 rehearsal passed; that private key lived
+only in guest tmpfs and no longer exists. Its public identity in review/rehearsal-results.json
+is TEST ONLY and must never become the production trust anchor.
 Owner approval is required before doing so. Proposed first implementation: manual
 offline signing on a separate normal-user Void machine/VM, encrypted PEM RSA-4096
 key, two encrypted offline backup copies, private directory0700/key0600, excluded
@@ -21,8 +24,11 @@ Export only the public PEM. `repository.py identity PUBLIC.pem` prints:
 * The OpenSSH/MD5 fingerprint that XBPS displays for key import. This is a lookup
   fingerprint, not a claim that package signatures use MD5: XBPS uses RSA/SHA256.
 
-The derivation was checked against an already trusted PUBLIC Void key on the
-workstation; no private key was accessed or generated. Publish both values on the
+The encoding was checked against an already trusted PUBLIC Void key and the
+actual native XBPS prompt for the disposable lab key. OpenSSL validates/exports
+public DER; a small RFC4251 encoder computes the displayed fingerprint without
+requiring ssh-keygen on the minimal signer. No existing personal private key was
+accessed. Publish both values on the
 repository and at least one separately controlled channel. A hash beside an
 untrusted download is not independent authentication. Users must compare the
 XBPS import prompt and the SHA256 identity with those authenticated values.
@@ -42,9 +48,9 @@ The script checks the exact approved candidate hash, key ownership/permissions,
 external location and approved public identity. It never copies the private key.
 It creates native package .sig2 signatures, initializes XBPS key metadata, writes a
 signed release.json covering the index/package/source hashes, and verifies package
-signatures and repository consistency. It does not upload anything. Signing code
-has not yet been exercised with a release or test private key; that ceremony and
-end-to-end XBPS remote acceptance remain prerequisites after owner approval.
+signatures and repository consistency. It does not upload anything. Signing code and native remote XBPS acceptance were exercised successfully with
+a disposable key. Definitive-key ceremony and public HTTPS acceptance remain
+separate owner-approved release operations.
 
 Important XBPS distinction: `xbps-rindex --sign` initializes repository key metadata;
 it must not be presented as a detached cryptographic signature over every byte of

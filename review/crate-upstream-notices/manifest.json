@@ -1,0 +1,658 @@
+{
+  "fluent-langneg-0.13.1": {
+    "repository": "projectfluent/fluent-langneg-rs",
+    "commit": "7fdc590466ea63ca2367ac10fb1b881fe561f1a8",
+    "evidence": "exact revision from vendored .cargo_vcs_info.json",
+    "notices": [
+      {
+        "file": "review/crate-upstream-notices/projectfluent--fluent-langneg-rs/7fdc590466ea63ca2367ac10fb1b881fe561f1a8/LICENSE-MIT",
+        "repository": "projectfluent/fluent-langneg-rs",
+        "commit": "7fdc590466ea63ca2367ac10fb1b881fe561f1a8",
+        "path": "LICENSE-MIT",
+        "url": "https://raw.githubusercontent.com/projectfluent/fluent-langneg-rs/7fdc590466ea63ca2367ac10fb1b881fe561f1a8/LICENSE-MIT",
+        "sha256": "016fcc02048817d628b04b140c54db290fd9d29a5e8a55b77871194e810716ac",
+        "git_blob_sha1": "00ec7a238dcd2fb765a6abc64ae43d80f0514140",
+        "authenticity": "HTTPS official repository immutable commit URL; hash recorded (not a separate signature)"
+      },
+      {
+        "file": "review/crate-upstream-notices/projectfluent--fluent-langneg-rs/7fdc590466ea63ca2367ac10fb1b881fe561f1a8/LICENSE-APACHE",
+        "repository": "projectfluent/fluent-langneg-rs",
+        "commit": "7fdc590466ea63ca2367ac10fb1b881fe561f1a8",
+        "path": "LICENSE-APACHE",
+        "url": "https://raw.githubusercontent.com/projectfluent/fluent-langneg-rs/7fdc590466ea63ca2367ac10fb1b881fe561f1a8/LICENSE-APACHE",
+        "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+        "git_blob_sha1": "8dada3edaf50dbc082c9a125058f25def75e625a",
+        "authenticity": "HTTPS official repository immutable commit URL; hash recorded (not a separate signature)"
+      }
+    ]
+  },
+  "gpu-alloc-0.6.0": {
+    "repository": "zakarumych/gpu-alloc",
+    "commit": "84ca166ba69b95b69f36c2cb3b0160a6c4efa90a",
+    "evidence": "exact revision from vendored .cargo_vcs_info.json",
+    "notices": [
+      {
+        "file": "review/crate-upstream-notices/zakarumych--gpu-alloc/84ca166ba69b95b69f36c2cb3b0160a6c4efa90a/COPYING",
+        "repository": "zakarumych/gpu-alloc",
+        "commit": "84ca166ba69b95b69f36c2cb3b0160a6c4efa90a",
+        "path": "COPYING",
+        "url": "https://raw.githubusercontent.com/zakarumych/gpu-alloc/84ca166ba69b95b69f36c2cb3b0160a6c4efa90a/COPYING",
+        "sha256": "12121dfa588677007848ab922a45a1e3248868f6ff063598fceb3141d7897314",
+        "git_blob_sha1": "1787983c037783b8855a688f5d9c0b6a2ec30b40",
+        "authenticity": "HTTPS official repository immutable commit URL; hash recorded (not a separate signature)"
+      }
+    ]
+  },
+  "gpu-alloc-types-0.3.0": {
+    "repository": "zakarumych/gpu-alloc",
+    "commit": "84ca166ba69b95b69f36c2cb3b0160a6c4efa90a",
+    "evidence": "exact revision from vendored .cargo_vcs_info.json",
+    "notices": [
+      {
+        "file": "review/crate-upstream-notices/zakarumych--gpu-alloc/84ca166ba69b95b69f36c2cb3b0160a6c4efa90a/COPYING",
+        "repository": "zakarumych/gpu-alloc",
+        "commit": "84ca166ba69b95b69f36c2cb3b0160a6c4efa90a",
+        "path": "COPYING",
+        "url": "https://raw.githubusercontent.com/zakarumych/gpu-alloc/84ca166ba69b95b69f36c2cb3b0160a6c4efa90a/COPYING",
+        "sha256": "12121dfa588677007848ab922a45a1e3248868f6ff063598fceb3141d7897314",
+        "git_blob_sha1": "1787983c037783b8855a688f5d9c0b6a2ec30b40",
+        "authenticity": "HTTPS official repository immutable commit URL; hash recorded (not a separate signature)"
+      }
+    ]
+  },
+  "gpu-descriptor-0.3.2": {
+    "repository": "zakarumych/gpu-descriptor",
+    "commit": "bb28b4e55b742e0ea3e7a0968e7ee6287ba0e06a",
+    "evidence": "exact revision from vendored .cargo_vcs_info.json",
+    "notices": [
+      {
+        "file": "review/crate-upstream-notices/zakarumych--gpu-descriptor/bb28b4e55b742e0ea3e7a0968e7ee6287ba0e06a/COPYING",
+        "repository": "zakarumych/gpu-descriptor",
+        "commit": "bb28b4e55b742e0ea3e7a0968e7ee6287ba0e06a",
+        "path": "COPYING",
+        "url": "https://raw.githubusercontent.com/zakarumych/gpu-descriptor/bb28b4e55b742e0ea3e7a0968e7ee6287ba0e06a/COPYING",
+        "sha256": "f72143f7e9d9fb8bd336b139fa22f825a299591c29f2f7338c5566347b137613",
+        "git_blob_sha1": "9eca5fed017db6917cc476f67dcff36b0364bd48",
+        "authenticity": "HTTPS official repository immutable commit URL; hash recorded (not a separate signature)"
+      }
+    ]
+  },
+  "gpu-descriptor-types-0.2.0": {
+    "repository": "zakarumych/gpu-descriptor",
+    "commit": "9f2fb9546591322e7b77ee1e79385e01effd85e4",
+    "evidence": "exact revision from vendored .cargo_vcs_info.json",
+    "notices": [
+      {
+        "file": "review/crate-upstream-notices/zakarumych--gpu-descriptor/9f2fb9546591322e7b77ee1e79385e01effd85e4/COPYING",
+        "repository": "zakarumych/gpu-descriptor",
+        "commit": "9f2fb9546591322e7b77ee1e79385e01effd85e4",
+        "path": "COPYING",
+        "url": "https://raw.githubusercontent.com/zakarumych/gpu-descriptor/9f2fb9546591322e7b77ee1e79385e01effd85e4/COPYING",
+        "sha256": "f72143f7e9d9fb8bd336b139fa22f825a299591c29f2f7338c5566347b137613",
+        "git_blob_sha1": "9eca5fed017db6917cc476f67dcff36b0364bd48",
+        "authenticity": "HTTPS official repository immutable commit URL; hash recorded (not a separate signature)"
+      }
+    ]
+  },
+  "hexf-parse-0.2.1": {
+    "repository": "lifthrasiir/hexf",
+    "commit": "4225763d744183d720f575ae96d04161b4d08ea0",
+    "evidence": "exact revision from vendored .cargo_vcs_info.json",
+    "notices": [
+      {
+        "file": "review/crate-upstream-notices/lifthrasiir--hexf/4225763d744183d720f575ae96d04161b4d08ea0/SOURCE-CARGO.toml",
+        "repository": "lifthrasiir/hexf",
+        "commit": "4225763d744183d720f575ae96d04161b4d08ea0",
+        "path": "SOURCE-CARGO.toml",
+        "url": "https://raw.githubusercontent.com/lifthrasiir/hexf/4225763d744183d720f575ae96d04161b4d08ea0/parse/Cargo.toml",
+        "sha256": "4a56dbdbc12054fd33b7a2634a45cbbe6fe12f5e6f4081002cbfa527f7220c70",
+        "kind": "exact upstream package manifest CC0 grant; canonical CC0 text supplied separately"
+      }
+    ]
+  },
+  "iced_core-0.14.0": {
+    "repository": "iced-rs/iced",
+    "commit": "3997291f318a8bc06fa522f5579836fb3feb94df",
+    "evidence": "exact revision from vendored .cargo_vcs_info.json",
+    "notices": [
+      {
+        "file": "review/crate-upstream-notices/iced-rs--iced/3997291f318a8bc06fa522f5579836fb3feb94df/LICENSE",
+        "repository": "iced-rs/iced",
+        "commit": "3997291f318a8bc06fa522f5579836fb3feb94df",
+        "path": "LICENSE",
+        "url": "https://raw.githubusercontent.com/iced-rs/iced/3997291f318a8bc06fa522f5579836fb3feb94df/LICENSE",
+        "sha256": "fc9086ba4eba4b77e4c603906362742bc3715ffa2c7810c6074fe7780d3a0398",
+        "git_blob_sha1": "f1148e26eac8202a1c2a170b41aa766d7dbb0c8d",
+        "authenticity": "HTTPS official repository immutable commit URL; hash recorded (not a separate signature)"
+      }
+    ]
+  },
+  "iced_debug-0.14.0": {
+    "repository": "iced-rs/iced",
+    "commit": "3997291f318a8bc06fa522f5579836fb3feb94df",
+    "evidence": "exact revision from vendored .cargo_vcs_info.json",
+    "notices": [
+      {
+        "file": "review/crate-upstream-notices/iced-rs--iced/3997291f318a8bc06fa522f5579836fb3feb94df/LICENSE",
+        "repository": "iced-rs/iced",
+        "commit": "3997291f318a8bc06fa522f5579836fb3feb94df",
+        "path": "LICENSE",
+        "url": "https://raw.githubusercontent.com/iced-rs/iced/3997291f318a8bc06fa522f5579836fb3feb94df/LICENSE",
+        "sha256": "fc9086ba4eba4b77e4c603906362742bc3715ffa2c7810c6074fe7780d3a0398",
+        "git_blob_sha1": "f1148e26eac8202a1c2a170b41aa766d7dbb0c8d",
+        "authenticity": "HTTPS official repository immutable commit URL; hash recorded (not a separate signature)"
+      }
+    ]
+  },
+  "iced_devtools-0.14.0": {
+    "repository": "iced-rs/iced",
+    "commit": "3997291f318a8bc06fa522f5579836fb3feb94df",
+    "evidence": "exact revision from vendored .cargo_vcs_info.json",
+    "notices": [
+      {
+        "file": "review/crate-upstream-notices/iced-rs--iced/3997291f318a8bc06fa522f5579836fb3feb94df/LICENSE",
+        "repository": "iced-rs/iced",
+        "commit": "3997291f318a8bc06fa522f5579836fb3feb94df",
+        "path": "LICENSE",
+        "url": "https://raw.githubusercontent.com/iced-rs/iced/3997291f318a8bc06fa522f5579836fb3feb94df/LICENSE",
+        "sha256": "fc9086ba4eba4b77e4c603906362742bc3715ffa2c7810c6074fe7780d3a0398",
+        "git_blob_sha1": "f1148e26eac8202a1c2a170b41aa766d7dbb0c8d",
+        "authenticity": "HTTPS official repository immutable commit URL; hash recorded (not a separate signature)"
+      }
+    ]
+  },
+  "iced_exdevtools-0.19.1": {
+    "repository": "waycrate/exwlshelleventloop",
+    "commit": "f538d44641cd4a52ead1aaa8d89270f820f826e0",
+    "evidence": "crate declares MIT/repository; VCS absent in coordinated vendor, license only retrieved from pinned upstream revision",
+    "notices": [
+      {
+        "file": "review/crate-upstream-notices/waycrate--exwlshelleventloop/f538d44641cd4a52ead1aaa8d89270f820f826e0/LICENSE",
+        "repository": "waycrate/exwlshelleventloop",
+        "commit": "f538d44641cd4a52ead1aaa8d89270f820f826e0",
+        "path": "LICENSE",
+        "url": "https://raw.githubusercontent.com/waycrate/exwlshelleventloop/f538d44641cd4a52ead1aaa8d89270f820f826e0/LICENSE",
+        "sha256": "f42393dbd25860cd6e95c3da8aa4d7fde6fe60eedaccf44a72155f90a1556c6c",
+        "git_blob_sha1": "14c4136a309450508cc72455421448b32b92e690",
+        "authenticity": "HTTPS official repository immutable commit URL; hash recorded (not a separate signature)"
+      }
+    ]
+  },
+  "iced_futures-0.14.0": {
+    "repository": "iced-rs/iced",
+    "commit": "3997291f318a8bc06fa522f5579836fb3feb94df",
+    "evidence": "exact revision from vendored .cargo_vcs_info.json",
+    "notices": [
+      {
+        "file": "review/crate-upstream-notices/iced-rs--iced/3997291f318a8bc06fa522f5579836fb3feb94df/LICENSE",
+        "repository": "iced-rs/iced",
+        "commit": "3997291f318a8bc06fa522f5579836fb3feb94df",
+        "path": "LICENSE",
+        "url": "https://raw.githubusercontent.com/iced-rs/iced/3997291f318a8bc06fa522f5579836fb3feb94df/LICENSE",
+        "sha256": "fc9086ba4eba4b77e4c603906362742bc3715ffa2c7810c6074fe7780d3a0398",
+        "git_blob_sha1": "f1148e26eac8202a1c2a170b41aa766d7dbb0c8d",
+        "authenticity": "HTTPS official repository immutable commit URL; hash recorded (not a separate signature)"
+      }
+    ]
+  },
+  "iced_graphics-0.14.0": {
+    "repository": "iced-rs/iced",
+    "commit": "3997291f318a8bc06fa522f5579836fb3feb94df",
+    "evidence": "exact revision from vendored .cargo_vcs_info.json",
+    "notices": [
+      {
+        "file": "review/crate-upstream-notices/iced-rs--iced/3997291f318a8bc06fa522f5579836fb3feb94df/LICENSE",
+        "repository": "iced-rs/iced",
+        "commit": "3997291f318a8bc06fa522f5579836fb3feb94df",
+        "path": "LICENSE",
+        "url": "https://raw.githubusercontent.com/iced-rs/iced/3997291f318a8bc06fa522f5579836fb3feb94df/LICENSE",
+        "sha256": "fc9086ba4eba4b77e4c603906362742bc3715ffa2c7810c6074fe7780d3a0398",
+        "git_blob_sha1": "f1148e26eac8202a1c2a170b41aa766d7dbb0c8d",
+        "authenticity": "HTTPS official repository immutable commit URL; hash recorded (not a separate signature)"
+      }
+    ]
+  },
+  "iced_program-0.14.0": {
+    "repository": "iced-rs/iced",
+    "commit": "3997291f318a8bc06fa522f5579836fb3feb94df",
+    "evidence": "exact revision from vendored .cargo_vcs_info.json",
+    "notices": [
+      {
+        "file": "review/crate-upstream-notices/iced-rs--iced/3997291f318a8bc06fa522f5579836fb3feb94df/LICENSE",
+        "repository": "iced-rs/iced",
+        "commit": "3997291f318a8bc06fa522f5579836fb3feb94df",
+        "path": "LICENSE",
+        "url": "https://raw.githubusercontent.com/iced-rs/iced/3997291f318a8bc06fa522f5579836fb3feb94df/LICENSE",
+        "sha256": "fc9086ba4eba4b77e4c603906362742bc3715ffa2c7810c6074fe7780d3a0398",
+        "git_blob_sha1": "f1148e26eac8202a1c2a170b41aa766d7dbb0c8d",
+        "authenticity": "HTTPS official repository immutable commit URL; hash recorded (not a separate signature)"
+      }
+    ]
+  },
+  "iced_renderer-0.14.0": {
+    "repository": "iced-rs/iced",
+    "commit": "3997291f318a8bc06fa522f5579836fb3feb94df",
+    "evidence": "exact revision from vendored .cargo_vcs_info.json",
+    "notices": [
+      {
+        "file": "review/crate-upstream-notices/iced-rs--iced/3997291f318a8bc06fa522f5579836fb3feb94df/LICENSE",
+        "repository": "iced-rs/iced",
+        "commit": "3997291f318a8bc06fa522f5579836fb3feb94df",
+        "path": "LICENSE",
+        "url": "https://raw.githubusercontent.com/iced-rs/iced/3997291f318a8bc06fa522f5579836fb3feb94df/LICENSE",
+        "sha256": "fc9086ba4eba4b77e4c603906362742bc3715ffa2c7810c6074fe7780d3a0398",
+        "git_blob_sha1": "f1148e26eac8202a1c2a170b41aa766d7dbb0c8d",
+        "authenticity": "HTTPS official repository immutable commit URL; hash recorded (not a separate signature)"
+      }
+    ]
+  },
+  "iced_runtime-0.14.0": {
+    "repository": "iced-rs/iced",
+    "commit": "3997291f318a8bc06fa522f5579836fb3feb94df",
+    "evidence": "exact revision from vendored .cargo_vcs_info.json",
+    "notices": [
+      {
+        "file": "review/crate-upstream-notices/iced-rs--iced/3997291f318a8bc06fa522f5579836fb3feb94df/LICENSE",
+        "repository": "iced-rs/iced",
+        "commit": "3997291f318a8bc06fa522f5579836fb3feb94df",
+        "path": "LICENSE",
+        "url": "https://raw.githubusercontent.com/iced-rs/iced/3997291f318a8bc06fa522f5579836fb3feb94df/LICENSE",
+        "sha256": "fc9086ba4eba4b77e4c603906362742bc3715ffa2c7810c6074fe7780d3a0398",
+        "git_blob_sha1": "f1148e26eac8202a1c2a170b41aa766d7dbb0c8d",
+        "authenticity": "HTTPS official repository immutable commit URL; hash recorded (not a separate signature)"
+      }
+    ]
+  },
+  "iced_widget-0.14.2": {
+    "repository": "iced-rs/iced",
+    "commit": "54abf81d13fec06d4d9ac754b03ce2c3313e8a1f",
+    "evidence": "exact revision from vendored .cargo_vcs_info.json",
+    "notices": [
+      {
+        "file": "review/crate-upstream-notices/iced-rs--iced/54abf81d13fec06d4d9ac754b03ce2c3313e8a1f/LICENSE",
+        "repository": "iced-rs/iced",
+        "commit": "54abf81d13fec06d4d9ac754b03ce2c3313e8a1f",
+        "path": "LICENSE",
+        "url": "https://raw.githubusercontent.com/iced-rs/iced/54abf81d13fec06d4d9ac754b03ce2c3313e8a1f/LICENSE",
+        "sha256": "fc9086ba4eba4b77e4c603906362742bc3715ffa2c7810c6074fe7780d3a0398",
+        "git_blob_sha1": "f1148e26eac8202a1c2a170b41aa766d7dbb0c8d",
+        "authenticity": "HTTPS official repository immutable commit URL; hash recorded (not a separate signature)"
+      }
+    ]
+  },
+  "iced_winit-0.14.0": {
+    "repository": "iced-rs/iced",
+    "commit": "3997291f318a8bc06fa522f5579836fb3feb94df",
+    "evidence": "exact revision from vendored .cargo_vcs_info.json",
+    "notices": [
+      {
+        "file": "review/crate-upstream-notices/iced-rs--iced/3997291f318a8bc06fa522f5579836fb3feb94df/LICENSE",
+        "repository": "iced-rs/iced",
+        "commit": "3997291f318a8bc06fa522f5579836fb3feb94df",
+        "path": "LICENSE",
+        "url": "https://raw.githubusercontent.com/iced-rs/iced/3997291f318a8bc06fa522f5579836fb3feb94df/LICENSE",
+        "sha256": "fc9086ba4eba4b77e4c603906362742bc3715ffa2c7810c6074fe7780d3a0398",
+        "git_blob_sha1": "f1148e26eac8202a1c2a170b41aa766d7dbb0c8d",
+        "authenticity": "HTTPS official repository immutable commit URL; hash recorded (not a separate signature)"
+      }
+    ]
+  },
+  "intl_pluralrules-7.0.2": {
+    "repository": "zbraniecki/pluralrules",
+    "commit": "d0715d5b7cca72e228d6e6c4de154bd30dfdd06a",
+    "evidence": "exact revision from vendored .cargo_vcs_info.json",
+    "notices": [
+      {
+        "file": "review/crate-upstream-notices/zbraniecki--pluralrules/d0715d5b7cca72e228d6e6c4de154bd30dfdd06a/README.md",
+        "repository": "zbraniecki/pluralrules",
+        "commit": "d0715d5b7cca72e228d6e6c4de154bd30dfdd06a",
+        "path": "README.md",
+        "url": "https://raw.githubusercontent.com/zbraniecki/pluralrules/d0715d5b7cca72e228d6e6c4de154bd30dfdd06a/README.md",
+        "sha256": "116f67b0e9095a6f202de8a1874eb3c2819e66c0518dd98123e0d98223b2d35d",
+        "kind": "upstream README license declaration"
+      }
+    ]
+  },
+  "layershellev-0.19.1": {
+    "repository": "waycrate/exwlshelleventloop",
+    "commit": "f538d44641cd4a52ead1aaa8d89270f820f826e0",
+    "evidence": "crate declares MIT/repository; VCS absent in coordinated vendor, license only retrieved from pinned upstream revision",
+    "notices": [
+      {
+        "file": "review/crate-upstream-notices/waycrate--exwlshelleventloop/f538d44641cd4a52ead1aaa8d89270f820f826e0/LICENSE",
+        "repository": "waycrate/exwlshelleventloop",
+        "commit": "f538d44641cd4a52ead1aaa8d89270f820f826e0",
+        "path": "LICENSE",
+        "url": "https://raw.githubusercontent.com/waycrate/exwlshelleventloop/f538d44641cd4a52ead1aaa8d89270f820f826e0/LICENSE",
+        "sha256": "f42393dbd25860cd6e95c3da8aa4d7fde6fe60eedaccf44a72155f90a1556c6c",
+        "git_blob_sha1": "14c4136a309450508cc72455421448b32b92e690",
+        "authenticity": "HTTPS official repository immutable commit URL; hash recorded (not a separate signature)"
+      }
+    ]
+  },
+  "lyon-1.0.19": {
+    "repository": "nical/lyon",
+    "commit": "56219c95c658d4f39de7b190d98e57d5773ba241",
+    "evidence": "exact revision from vendored .cargo_vcs_info.json",
+    "notices": [
+      {
+        "file": "review/crate-upstream-notices/nical--lyon/56219c95c658d4f39de7b190d98e57d5773ba241/LICENSE-MIT",
+        "repository": "nical/lyon",
+        "commit": "56219c95c658d4f39de7b190d98e57d5773ba241",
+        "path": "LICENSE-MIT",
+        "url": "https://raw.githubusercontent.com/nical/lyon/56219c95c658d4f39de7b190d98e57d5773ba241/LICENSE-MIT",
+        "sha256": "80f275e90d799911ed3830a7f242a2ef5a4ade2092fe0aa07bfb2d2cf2f2b95e",
+        "git_blob_sha1": "e6d4b179949c58d7a4143d661ccdfecabcebcf54",
+        "authenticity": "HTTPS official repository immutable commit URL; hash recorded (not a separate signature)"
+      },
+      {
+        "file": "review/crate-upstream-notices/nical--lyon/56219c95c658d4f39de7b190d98e57d5773ba241/LICENSE-APACHE",
+        "repository": "nical/lyon",
+        "commit": "56219c95c658d4f39de7b190d98e57d5773ba241",
+        "path": "LICENSE-APACHE",
+        "url": "https://raw.githubusercontent.com/nical/lyon/56219c95c658d4f39de7b190d98e57d5773ba241/LICENSE-APACHE",
+        "sha256": "216486f29671a4262efe32af6d84a75bef398127f8c5f369b5c8305983887a06",
+        "git_blob_sha1": "47f4fd0e8982271e9b7662380fae36a1ac007cf1",
+        "authenticity": "HTTPS official repository immutable commit URL; hash recorded (not a separate signature)"
+      }
+    ]
+  },
+  "lyon_algorithms-1.0.20": {
+    "repository": "nical/lyon",
+    "commit": "66b9ea7f4ab935763970e828781d8fd5e9305542",
+    "evidence": "exact revision from vendored .cargo_vcs_info.json",
+    "notices": [
+      {
+        "file": "review/crate-upstream-notices/nical--lyon/66b9ea7f4ab935763970e828781d8fd5e9305542/LICENSE-MIT",
+        "repository": "nical/lyon",
+        "commit": "66b9ea7f4ab935763970e828781d8fd5e9305542",
+        "path": "LICENSE-MIT",
+        "url": "https://raw.githubusercontent.com/nical/lyon/66b9ea7f4ab935763970e828781d8fd5e9305542/LICENSE-MIT",
+        "sha256": "80f275e90d799911ed3830a7f242a2ef5a4ade2092fe0aa07bfb2d2cf2f2b95e",
+        "git_blob_sha1": "e6d4b179949c58d7a4143d661ccdfecabcebcf54",
+        "authenticity": "HTTPS official repository immutable commit URL; hash recorded (not a separate signature)"
+      },
+      {
+        "file": "review/crate-upstream-notices/nical--lyon/66b9ea7f4ab935763970e828781d8fd5e9305542/LICENSE-APACHE",
+        "repository": "nical/lyon",
+        "commit": "66b9ea7f4ab935763970e828781d8fd5e9305542",
+        "path": "LICENSE-APACHE",
+        "url": "https://raw.githubusercontent.com/nical/lyon/66b9ea7f4ab935763970e828781d8fd5e9305542/LICENSE-APACHE",
+        "sha256": "216486f29671a4262efe32af6d84a75bef398127f8c5f369b5c8305983887a06",
+        "git_blob_sha1": "47f4fd0e8982271e9b7662380fae36a1ac007cf1",
+        "authenticity": "HTTPS official repository immutable commit URL; hash recorded (not a separate signature)"
+      }
+    ]
+  },
+  "lyon_geom-1.0.19": {
+    "repository": "nical/lyon",
+    "commit": "56219c95c658d4f39de7b190d98e57d5773ba241",
+    "evidence": "exact revision from vendored .cargo_vcs_info.json",
+    "notices": [
+      {
+        "file": "review/crate-upstream-notices/nical--lyon/56219c95c658d4f39de7b190d98e57d5773ba241/LICENSE-MIT",
+        "repository": "nical/lyon",
+        "commit": "56219c95c658d4f39de7b190d98e57d5773ba241",
+        "path": "LICENSE-MIT",
+        "url": "https://raw.githubusercontent.com/nical/lyon/56219c95c658d4f39de7b190d98e57d5773ba241/LICENSE-MIT",
+        "sha256": "80f275e90d799911ed3830a7f242a2ef5a4ade2092fe0aa07bfb2d2cf2f2b95e",
+        "git_blob_sha1": "e6d4b179949c58d7a4143d661ccdfecabcebcf54",
+        "authenticity": "HTTPS official repository immutable commit URL; hash recorded (not a separate signature)"
+      },
+      {
+        "file": "review/crate-upstream-notices/nical--lyon/56219c95c658d4f39de7b190d98e57d5773ba241/LICENSE-APACHE",
+        "repository": "nical/lyon",
+        "commit": "56219c95c658d4f39de7b190d98e57d5773ba241",
+        "path": "LICENSE-APACHE",
+        "url": "https://raw.githubusercontent.com/nical/lyon/56219c95c658d4f39de7b190d98e57d5773ba241/LICENSE-APACHE",
+        "sha256": "216486f29671a4262efe32af6d84a75bef398127f8c5f369b5c8305983887a06",
+        "git_blob_sha1": "47f4fd0e8982271e9b7662380fae36a1ac007cf1",
+        "authenticity": "HTTPS official repository immutable commit URL; hash recorded (not a separate signature)"
+      }
+    ]
+  },
+  "lyon_path-1.0.19": {
+    "repository": "nical/lyon",
+    "commit": "56219c95c658d4f39de7b190d98e57d5773ba241",
+    "evidence": "exact revision from vendored .cargo_vcs_info.json",
+    "notices": [
+      {
+        "file": "review/crate-upstream-notices/nical--lyon/56219c95c658d4f39de7b190d98e57d5773ba241/LICENSE-MIT",
+        "repository": "nical/lyon",
+        "commit": "56219c95c658d4f39de7b190d98e57d5773ba241",
+        "path": "LICENSE-MIT",
+        "url": "https://raw.githubusercontent.com/nical/lyon/56219c95c658d4f39de7b190d98e57d5773ba241/LICENSE-MIT",
+        "sha256": "80f275e90d799911ed3830a7f242a2ef5a4ade2092fe0aa07bfb2d2cf2f2b95e",
+        "git_blob_sha1": "e6d4b179949c58d7a4143d661ccdfecabcebcf54",
+        "authenticity": "HTTPS official repository immutable commit URL; hash recorded (not a separate signature)"
+      },
+      {
+        "file": "review/crate-upstream-notices/nical--lyon/56219c95c658d4f39de7b190d98e57d5773ba241/LICENSE-APACHE",
+        "repository": "nical/lyon",
+        "commit": "56219c95c658d4f39de7b190d98e57d5773ba241",
+        "path": "LICENSE-APACHE",
+        "url": "https://raw.githubusercontent.com/nical/lyon/56219c95c658d4f39de7b190d98e57d5773ba241/LICENSE-APACHE",
+        "sha256": "216486f29671a4262efe32af6d84a75bef398127f8c5f369b5c8305983887a06",
+        "git_blob_sha1": "47f4fd0e8982271e9b7662380fae36a1ac007cf1",
+        "authenticity": "HTTPS official repository immutable commit URL; hash recorded (not a separate signature)"
+      }
+    ]
+  },
+  "lyon_tessellation-1.0.20": {
+    "repository": "nical/lyon",
+    "commit": "7fa75ea8eea36255cae2abcf709900b0c7a5c309",
+    "evidence": "exact revision from vendored .cargo_vcs_info.json",
+    "notices": [
+      {
+        "file": "review/crate-upstream-notices/nical--lyon/7fa75ea8eea36255cae2abcf709900b0c7a5c309/LICENSE-MIT",
+        "repository": "nical/lyon",
+        "commit": "7fa75ea8eea36255cae2abcf709900b0c7a5c309",
+        "path": "LICENSE-MIT",
+        "url": "https://raw.githubusercontent.com/nical/lyon/7fa75ea8eea36255cae2abcf709900b0c7a5c309/LICENSE-MIT",
+        "sha256": "80f275e90d799911ed3830a7f242a2ef5a4ade2092fe0aa07bfb2d2cf2f2b95e",
+        "git_blob_sha1": "e6d4b179949c58d7a4143d661ccdfecabcebcf54",
+        "authenticity": "HTTPS official repository immutable commit URL; hash recorded (not a separate signature)"
+      },
+      {
+        "file": "review/crate-upstream-notices/nical--lyon/7fa75ea8eea36255cae2abcf709900b0c7a5c309/LICENSE-APACHE",
+        "repository": "nical/lyon",
+        "commit": "7fa75ea8eea36255cae2abcf709900b0c7a5c309",
+        "path": "LICENSE-APACHE",
+        "url": "https://raw.githubusercontent.com/nical/lyon/7fa75ea8eea36255cae2abcf709900b0c7a5c309/LICENSE-APACHE",
+        "sha256": "216486f29671a4262efe32af6d84a75bef398127f8c5f369b5c8305983887a06",
+        "git_blob_sha1": "47f4fd0e8982271e9b7662380fae36a1ac007cf1",
+        "authenticity": "HTTPS official repository immutable commit URL; hash recorded (not a separate signature)"
+      }
+    ]
+  },
+  "profiling-1.0.18": {
+    "repository": "aclysma/profiling",
+    "commit": "8271551172eb6fa4cba47369aedd93790c623df9",
+    "evidence": "exact revision from vendored .cargo_vcs_info.json",
+    "notices": [
+      {
+        "file": "review/crate-upstream-notices/aclysma--profiling/8271551172eb6fa4cba47369aedd93790c623df9/LICENSE-MIT",
+        "repository": "aclysma/profiling",
+        "commit": "8271551172eb6fa4cba47369aedd93790c623df9",
+        "path": "LICENSE-MIT",
+        "url": "https://raw.githubusercontent.com/aclysma/profiling/8271551172eb6fa4cba47369aedd93790c623df9/LICENSE-MIT",
+        "sha256": "c8167fdeeed46d3f244d3f85c5bf998ce889343691c32be2c61a8bc4b5c08333",
+        "git_blob_sha1": "6a84e059ad8b43e03c2b06bc2af4dc1d8442808d",
+        "authenticity": "HTTPS official repository immutable commit URL; hash recorded (not a separate signature)"
+      },
+      {
+        "file": "review/crate-upstream-notices/aclysma--profiling/8271551172eb6fa4cba47369aedd93790c623df9/LICENSE-APACHE",
+        "repository": "aclysma/profiling",
+        "commit": "8271551172eb6fa4cba47369aedd93790c623df9",
+        "path": "LICENSE-APACHE",
+        "url": "https://raw.githubusercontent.com/aclysma/profiling/8271551172eb6fa4cba47369aedd93790c623df9/LICENSE-APACHE",
+        "sha256": "10d30a673cd5e9349bdc02aeb48f14b3386d27d0da32df8f0a555d4aa16aa551",
+        "git_blob_sha1": "139dce95d473c201a8561ef17536314d8b8cda65",
+        "authenticity": "HTTPS official repository immutable commit URL; hash recorded (not a separate signature)"
+      }
+    ]
+  },
+  "spirv-0.3.0+sdk-1.3.268.0": {
+    "repository": "gfx-rs/rspirv",
+    "commit": "e91a5debc10c395b36db7721dfff6326d697a1e2",
+    "evidence": "exact revision from vendored .cargo_vcs_info.json",
+    "notices": [
+      {
+        "file": "review/crate-upstream-notices/gfx-rs--rspirv/e91a5debc10c395b36db7721dfff6326d697a1e2/LICENSE",
+        "repository": "gfx-rs/rspirv",
+        "commit": "e91a5debc10c395b36db7721dfff6326d697a1e2",
+        "path": "LICENSE",
+        "url": "https://raw.githubusercontent.com/gfx-rs/rspirv/e91a5debc10c395b36db7721dfff6326d697a1e2/LICENSE",
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "git_blob_sha1": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+        "authenticity": "HTTPS official repository immutable commit URL; hash recorded (not a separate signature)"
+      }
+    ]
+  },
+  "svg_fmt-0.4.5": {
+    "repository": "nical/rust_debug",
+    "commit": "93f414cd572b5c2781df93dbdc068ed13443d05a",
+    "evidence": "exact revision from vendored .cargo_vcs_info.json",
+    "notices": [
+      {
+        "file": "review/crate-upstream-notices/nical--rust_debug/93f414cd572b5c2781df93dbdc068ed13443d05a/LICENSE",
+        "repository": "nical/rust_debug",
+        "commit": "93f414cd572b5c2781df93dbdc068ed13443d05a",
+        "path": "LICENSE",
+        "url": "https://raw.githubusercontent.com/nical/rust_debug/93f414cd572b5c2781df93dbdc068ed13443d05a/LICENSE",
+        "sha256": "7e98bed7f100747aaae7d82ab94fbe6b76fd6b84b09a3aaa413bff8196d0fbb1",
+        "git_blob_sha1": "9ad7b40bcf7bb89a9866e5e2e8fdb370fb528e36",
+        "authenticity": "HTTPS official repository immutable commit URL; hash recorded (not a separate signature)"
+      }
+    ]
+  },
+  "waycrate_xkbkeycode-0.19.1": {
+    "repository": "waycrate/exwlshelleventloop",
+    "commit": "f538d44641cd4a52ead1aaa8d89270f820f826e0",
+    "evidence": "crate declares MIT/repository; VCS absent in coordinated vendor, license only retrieved from pinned upstream revision",
+    "notices": [
+      {
+        "file": "review/crate-upstream-notices/waycrate--exwlshelleventloop/f538d44641cd4a52ead1aaa8d89270f820f826e0/LICENSE",
+        "repository": "waycrate/exwlshelleventloop",
+        "commit": "f538d44641cd4a52ead1aaa8d89270f820f826e0",
+        "path": "LICENSE",
+        "url": "https://raw.githubusercontent.com/waycrate/exwlshelleventloop/f538d44641cd4a52ead1aaa8d89270f820f826e0/LICENSE",
+        "sha256": "f42393dbd25860cd6e95c3da8aa4d7fde6fe60eedaccf44a72155f90a1556c6c",
+        "git_blob_sha1": "14c4136a309450508cc72455421448b32b92e690",
+        "authenticity": "HTTPS official repository immutable commit URL; hash recorded (not a separate signature)"
+      }
+    ]
+  },
+  "gpu-alloc-0.6.2": {
+    "repository": "zakarumych/gpu-alloc",
+    "commit": "61020bdcb4eb04fca6bbf748aeb9570e859236e0",
+    "evidence": "exact revision from vendored .cargo_vcs_info.json",
+    "notices": [
+      {
+        "file": "review/crate-upstream-notices/zakarumych--gpu-alloc/61020bdcb4eb04fca6bbf748aeb9570e859236e0/COPYING",
+        "repository": "zakarumych/gpu-alloc",
+        "commit": "61020bdcb4eb04fca6bbf748aeb9570e859236e0",
+        "path": "COPYING",
+        "url": "https://raw.githubusercontent.com/zakarumych/gpu-alloc/61020bdcb4eb04fca6bbf748aeb9570e859236e0/COPYING",
+        "sha256": "12121dfa588677007848ab922a45a1e3248868f6ff063598fceb3141d7897314",
+        "git_blob_sha1": "1787983c037783b8855a688f5d9c0b6a2ec30b40",
+        "authenticity": "HTTPS official repository immutable commit URL; hash recorded (not a separate signature)"
+      }
+    ]
+  },
+  "gpu-alloc-types-0.3.1": {
+    "repository": "zakarumych/gpu-alloc",
+    "commit": "7ddd1fe576fcfc503347eb97e476a47581479f22",
+    "evidence": "exact revision from vendored .cargo_vcs_info.json",
+    "notices": [
+      {
+        "file": "review/crate-upstream-notices/zakarumych--gpu-alloc/7ddd1fe576fcfc503347eb97e476a47581479f22/COPYING",
+        "repository": "zakarumych/gpu-alloc",
+        "commit": "7ddd1fe576fcfc503347eb97e476a47581479f22",
+        "path": "COPYING",
+        "url": "https://raw.githubusercontent.com/zakarumych/gpu-alloc/7ddd1fe576fcfc503347eb97e476a47581479f22/COPYING",
+        "sha256": "12121dfa588677007848ab922a45a1e3248868f6ff063598fceb3141d7897314",
+        "git_blob_sha1": "1787983c037783b8855a688f5d9c0b6a2ec30b40",
+        "authenticity": "HTTPS official repository immutable commit URL; hash recorded (not a separate signature)"
+      }
+    ]
+  },
+  "ispc_rt-2.0.4": {
+    "repository": "Twinklebear/ispc-rs",
+    "commit": "5aa6a9b11ee6cfcbc951abab5488fbfa09121d83",
+    "evidence": "exact revision from vendored .cargo_vcs_info.json",
+    "notices": [
+      {
+        "file": "review/crate-upstream-notices/Twinklebear--ispc-rs/5aa6a9b11ee6cfcbc951abab5488fbfa09121d83/LICENSE.md",
+        "repository": "Twinklebear/ispc-rs",
+        "commit": "5aa6a9b11ee6cfcbc951abab5488fbfa09121d83",
+        "path": "LICENSE.md",
+        "url": "https://raw.githubusercontent.com/Twinklebear/ispc-rs/5aa6a9b11ee6cfcbc951abab5488fbfa09121d83/LICENSE.md",
+        "sha256": "99c8564a400d2a0c645ee38a819fdceee37557d9205074b3f90de4f297061ef0",
+        "git_blob_sha1": "8ac4990b8d4c38e1b0f7bcdfcc37be65a30e4937",
+        "authenticity": "HTTPS official repository immutable commit URL; hash recorded (not a separate signature)"
+      }
+    ]
+  },
+  "rquickjs-core-0.12.2": {
+    "repository": "DelSkayn/rquickjs",
+    "commit": "635f9322ccc875e3f9851e7f75ec538cf3274fd5",
+    "evidence": "exact revision from vendored .cargo_vcs_info.json",
+    "notices": [
+      {
+        "file": "review/crate-upstream-notices/DelSkayn--rquickjs/635f9322ccc875e3f9851e7f75ec538cf3274fd5/LICENSE",
+        "repository": "DelSkayn/rquickjs",
+        "commit": "635f9322ccc875e3f9851e7f75ec538cf3274fd5",
+        "path": "LICENSE",
+        "url": "https://raw.githubusercontent.com/DelSkayn/rquickjs/635f9322ccc875e3f9851e7f75ec538cf3274fd5/LICENSE",
+        "sha256": "976ad3d07927343ab99b31510625acba89eac8e0e517c712925620ddeda91b70",
+        "git_blob_sha1": "3aa726b708598dbbf587e7ca2dcd0eff4987bef7",
+        "authenticity": "HTTPS official repository immutable commit URL; hash recorded (not a separate signature)"
+      }
+    ]
+  },
+  "shaderc-0.9.1": {
+    "repository": "google/shaderc-rs",
+    "commit": "65388cdef235e866b277d32bc84ada30b66be101",
+    "evidence": "exact revision from vendored .cargo_vcs_info.json",
+    "notices": [
+      {
+        "file": "review/crate-upstream-notices/google--shaderc-rs/65388cdef235e866b277d32bc84ada30b66be101/LICENSE",
+        "repository": "google/shaderc-rs",
+        "commit": "65388cdef235e866b277d32bc84ada30b66be101",
+        "path": "LICENSE",
+        "url": "https://raw.githubusercontent.com/google/shaderc-rs/65388cdef235e866b277d32bc84ada30b66be101/LICENSE",
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "git_blob_sha1": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+        "authenticity": "HTTPS official repository immutable commit URL; hash recorded (not a separate signature)"
+      }
+    ]
+  },
+  "dasp_sample-0.11.0": {
+    "repository": "rustaudio/sample",
+    "commit": "97c3bb9b2363c0b46ac1633858bf1054fd02a980",
+    "evidence": "exact revision from vendored .cargo_vcs_info.json",
+    "notices": [
+      {
+        "file": "review/crate-upstream-notices/rustaudio--sample/97c3bb9b2363c0b46ac1633858bf1054fd02a980/LICENSE-MIT",
+        "repository": "rustaudio/sample",
+        "commit": "97c3bb9b2363c0b46ac1633858bf1054fd02a980",
+        "path": "LICENSE-MIT",
+        "url": "https://raw.githubusercontent.com/rustaudio/sample/97c3bb9b2363c0b46ac1633858bf1054fd02a980/LICENSE-MIT",
+        "sha256": "b1d6df41ed3aa96806e74c729444d7c121d90e6660a6aed01d298e03fde475a0",
+        "git_blob_sha1": "b35b54912ac435a64227b09c9347475caefa1cbd",
+        "authenticity": "HTTPS official repository immutable commit URL; hash recorded (not a separate signature)"
+      },
+      {
+        "file": "review/crate-upstream-notices/rustaudio--sample/97c3bb9b2363c0b46ac1633858bf1054fd02a980/LICENSE-APACHE",
+        "repository": "rustaudio/sample",
+        "commit": "97c3bb9b2363c0b46ac1633858bf1054fd02a980",
+        "path": "LICENSE-APACHE",
+        "url": "https://raw.githubusercontent.com/rustaudio/sample/97c3bb9b2363c0b46ac1633858bf1054fd02a980/LICENSE-APACHE",
+        "sha256": "756c8d2ab2dc24f256e1455b5f03937f4933d83d7bc9f2d55009fc962377d512",
+        "git_blob_sha1": "74c4f492b303bec6da5ec6af182865f664a4c4c0",
+        "authenticity": "HTTPS official repository immutable commit URL; hash recorded (not a separate signature)"
+      }
+    ]
+  }
+}

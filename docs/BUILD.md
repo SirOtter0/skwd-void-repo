@@ -65,5 +65,29 @@ turning it on. Destroy each runner/working disk after exporting reviewed evidenc
 Do not expose a general persistent self-hosted runner to public PRs.
 
 No binary upload step is enabled: an Actions artifact can be accessible to others
-and is still redistribution. Clear licensing before adding an approved unsigned
-candidate-transfer job. The build VM never receives the signing key.
+and is still redistribution. Obtain explicit release approval before adding an
+approved unsigned candidate-transfer job. The build VM never receives the signing key.
+
+## Legal revision4
+
+The pipeline first builds the original revision3 payload from the validated port,
+then records the actual Cargo fingerprint dependency closure and reassembles all
+four archives as revision4. `repack-notices.py` adds per-crate/native/asset notices
+and exact companion dependencies, and refuses any change to ELF bytes. Existing
+validated input archives use pinned hashes; a fresh controlled build supplies the
+original packager inventory with --build-inventory. No old binary cache is required
+by that fresh-build path.
+
+`prepare-public-source.py` retains exact sources/locks/vendor, the validated public
+port recipes, patches and public infrastructure snapshot. Its SDK plan records
+that the original Steam SDK directory is empty and unused by core packages. It
+refuses automatic SDK exclusions if the actual core build uses those wrappers.
+An actual source module named src/wayland/target is retained; it is not a Cargo
+cache. Corresponding-source checks resolved all four workspaces offline/frozen,
+with read-only sources, and verified45,595 vendored files. No compilation was
+repeated for the notice-only repack.
+
+The revised individual steps and private signing/install/removal path were tested.
+The newly composed fresh CI orchestration has not been run as another complete
+Rust build; the earlier two independent clean builds remain its compiler evidence.
+The binary build and publication workflows remain disabled.

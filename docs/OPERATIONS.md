@@ -1,17 +1,14 @@
 # Release and channel operations
 
-## First release blockers
+## Before the first public release
 
-* License/NOTICE/source-mirror review is incomplete; binary upload is forbidden.
-* No owner-approved signing key, identity/fingerprint announcement or key ceremony.
-* No enabled Pages site, live/testing URL or configured protected publication env.
-* New signing/promotion/deployment scripts need an approved end-to-end rehearsal
-  with a disposable test-only key BEFORE any definitive release key is used.
-* The self-hosted ephemeral builder image/provisioning and runner restriction need
-  owner review. The existing independent clean-build evidence remains valid, but
-  the new CI orchestration itself has not been executed or claimed as validated.
+The notice/source work and owner-authorized disposable-key rehearsal are complete;
+see STATUS.md and REDISTRIBUTION-REVIEW.md. Still required: explicit owner approval
+for definitive-key creation and first testing publication, authenticated production
+fingerprints/backup ceremony, exact candidate/provenance review and protected HTTPS
+publication settings. No signing/publishing secret is configured in CI.
 
-No build/install/deployment ran merely because this repository was initialized.
+No deployment runs merely because this repository is updated.
 Only infrastructure checks run on hosted PR runners. No application code runs on
 PR events and no job has a signing secret. No workflow_run/pull_request_target
 handoff accepts untrusted build artifacts into a privileged signer.

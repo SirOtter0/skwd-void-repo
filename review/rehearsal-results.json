@@ -1,0 +1,245 @@
+{
+  "scope": "PRIVATE DISPOSABLE TWO-VM LAB; NOT A PRODUCTION SIGNING IDENTITY",
+  "date_completed": "2026-11-08",
+  "network": "QEMU UNIX-stream Ethernet, static 10.44.0.0/30, no gateway/DNS/host shares/graphics",
+  "architecture": "x86_64 glibc/runit",
+  "package_revision": "1.0.0beta26_4",
+  "crypto": "RSA4096/SHA256 native XBPS signatures plus signed release manifest",
+  "test_public_identity": {
+    "spki_sha256": "5b983c19fb92724729c765558ddaede5a1b7c0c73cf85884657b341d13ffd433",
+    "xbps_md5_fingerprint": "18:9e:16:03:5a:07:10:7b:f2:6f:e5:0b:cb:32:fb:e2"
+  },
+  "checks": {
+    "bad-package": {
+      "exit": 1,
+      "installed_payload_unchanged": true,
+      "integrity_rejected": true,
+      "log": "bad-package.log",
+      "native_key_prompt_confirmed": false
+    },
+    "bad-signature": {
+      "exit": 1,
+      "installed_payload_unchanged": true,
+      "integrity_rejected": true,
+      "log": "bad-signature.log",
+      "native_key_prompt_confirmed": false
+    },
+    "baseline_install": {
+      "exit": 0,
+      "log": "install-baseline.log",
+      "native_key_prompt_confirmed": false,
+      "versions": {
+        "skwd-deck-local": "skwd-deck-local-1.0.0beta26_3",
+        "skwd-lens-local": "skwd-lens-local-1.0.0beta26_3",
+        "skwd-paper-local": "skwd-paper-local-1.0.0beta26_3",
+        "skwd-wall-v2-local": "skwd-wall-v2-local-1.0.0beta26_3"
+      }
+    },
+    "fixture_rollback": {
+      "exit": 0,
+      "log": "rollback-baseline.log",
+      "native_key_prompt_confirmed": false,
+      "versions": {
+        "skwd-deck-local": "skwd-deck-local-1.0.0beta26_3",
+        "skwd-lens-local": "skwd-lens-local-1.0.0beta26_3",
+        "skwd-paper-local": "skwd-paper-local-1.0.0beta26_3",
+        "skwd-wall-v2-local": "skwd-wall-v2-local-1.0.0beta26_3"
+      }
+    },
+    "key_import": {
+      "exit": 0,
+      "log": "import-key.log",
+      "native_key_prompt_confirmed": true
+    },
+    "removal": {
+      "exit": 0,
+      "lab_repository_config_removed": true,
+      "port_packages_absent": true,
+      "services_unchanged": true,
+      "temporary_key_untrusted": true
+    },
+    "revised_install": {
+      "exit": 0,
+      "log": "upgrade.log",
+      "native_key_prompt_confirmed": false,
+      "versions": {
+        "skwd-deck-local": "skwd-deck-local-1.0.0beta26_4",
+        "skwd-lens-local": "skwd-lens-local-1.0.0beta26_4",
+        "skwd-paper-local": "skwd-paper-local-1.0.0beta26_4",
+        "skwd-wall-v2-local": "skwd-wall-v2-local-1.0.0beta26_4"
+      }
+    },
+    "signed_release": {
+      "corresponding_source_sha256": "064618bb4ff98fb1cf450cbb275d67880ea3648aeef443f77cdcd5d4fbce1b13",
+      "packages_and_signatures": 4,
+      "signed_manifest_and_all_artifact_hashes": "PASS"
+    },
+    "upgrade_simulation": {
+      "exit": 0,
+      "installed_versions_unchanged": true,
+      "log": "upgrade-plan.log",
+      "native_key_prompt_confirmed": false
+    }
+  },
+  "key_destruction": {
+    "private_key_deleted": true,
+    "production_key_created": false,
+    "storage": "tmpfs"
+  },
+  "source_verification": {
+    "vendor_files_verified": 45595,
+    "metadata": {
+      "wall": {
+        "exit": 0,
+        "resolved_packages": 446,
+        "network": "bubblewrap unshare-all; Cargo offline/frozen",
+        "source_mount": "read-only",
+        "project_code_executed": false
+      },
+      "deck": {
+        "exit": 0,
+        "resolved_packages": 371,
+        "network": "bubblewrap unshare-all; Cargo offline/frozen",
+        "source_mount": "read-only",
+        "project_code_executed": false
+      },
+      "lens": {
+        "exit": 0,
+        "resolved_packages": 141,
+        "network": "bubblewrap unshare-all; Cargo offline/frozen",
+        "source_mount": "read-only",
+        "project_code_executed": false
+      },
+      "paper": {
+        "exit": 0,
+        "resolved_packages": 355,
+        "network": "bubblewrap unshare-all; Cargo offline/frozen",
+        "source_mount": "read-only",
+        "project_code_executed": false
+      }
+    },
+    "sdk": {
+      "excluded_files": [],
+      "note": "An empty SDK directory is not evidence that a proprietary runtime is shipped. Original coordinated suite already omits native SDK files; preserve Rust wrapper/manifests for unchanged Cargo resolution.",
+      "observations": [
+        {
+          "crate": "steamworks-sys-0.13.0",
+          "needed_by_four_components": false,
+          "sdk_lib_file_count": 0,
+          "wrapper_rust_sources_retained": true
+        }
+      ]
+    },
+    "source_archive_sha256": "064618bb4ff98fb1cf450cbb275d67880ea3648aeef443f77cdcd5d4fbce1b13"
+  },
+  "repacked_packages": [
+    {
+      "built_but_not_runtime": 38,
+      "component": "wall",
+      "dependencies": [
+        "fontconfig>=2.17.1_1",
+        "glibc>=2.41_1",
+        "libgcc>=14.2.1+20250405_4",
+        "libglvnd>=1.7.0_1",
+        "libxkbcommon>=1.13.2_1",
+        "vulkan-loader>=1.4.363.0_1",
+        "wayland>=1.26.0_1",
+        "skwd-paper-local-1.0.0beta26_4",
+        "skwd-deck-local-1.0.0beta26_4"
+      ],
+      "file": "skwd-wall-v2-local-1.0.0beta26_4.x86_64.xbps",
+      "name": "skwd-wall-v2-local",
+      "runtime_crates": 251,
+      "sha256": "a85e361a26f4081a81911814b8958c756514956ac0fa2ca4280ef9383892b30b",
+      "unchanged_elf": {
+        "/usr/bin/skwd-wall-v2": "c5b4de0e21d9e01c5efa832f0e06704842c297138ef518e55a2283ed8c30b805"
+      },
+      "version": "skwd-wall-v2-local-1.0.0beta26_4"
+    },
+    {
+      "built_but_not_runtime": 44,
+      "component": "deck",
+      "dependencies": [
+        "glibc>=2.41_1",
+        "libgcc>=14.2.1+20250405_4",
+        "skwd-paper-local-1.0.0beta26_4"
+      ],
+      "file": "skwd-deck-local-1.0.0beta26_4.x86_64.xbps",
+      "name": "skwd-deck-local",
+      "runtime_crates": 224,
+      "sha256": "bb8ad5e61727df0a287a2f55fa629f687349276e2655dc9db3796df9253bfd5d",
+      "unchanged_elf": {
+        "/usr/bin/skwd-helm": "1065467cdbc30d5d0f7fede6c638e0b1d07c454ce4686b4db2aa09cd132a590e",
+        "/usr/bin/skwd-wall-effects": "e3fa54987a43f24db75f3b08839742d0a17e804d29c616259d16ac61c3694d4b",
+        "/usr/bin/skwd-wall-scan": "4426e214772d3f440ec3eedb71eca52247293407c35b68fd8ce72112b4981747",
+        "/usr/bin/skwd-walld": "af7391c69de482afebc614ab659bb6913ee83ccb57934ab4192ada0cc0b428c8"
+      },
+      "version": "skwd-deck-local-1.0.0beta26_4"
+    },
+    {
+      "built_but_not_runtime": 27,
+      "component": "lens",
+      "dependencies": [
+        "glibc>=2.41_1",
+        "libgcc>=14.2.1+20250405_4"
+      ],
+      "file": "skwd-lens-local-1.0.0beta26_4.x86_64.xbps",
+      "name": "skwd-lens-local",
+      "runtime_crates": 95,
+      "sha256": "c6488c580da1e44ece8d004186a76bb5e6b364436bfe78a63dd2f9d17a25a0f4",
+      "unchanged_elf": {
+        "/usr/bin/skwd-lens": "68b2ef909cf1537de8992ebee01aa72cfd8d3ed464d1066e26d7056071b8db83"
+      },
+      "version": "skwd-lens-local-1.0.0beta26_4"
+    },
+    {
+      "built_but_not_runtime": 54,
+      "component": "paper",
+      "dependencies": [
+        "alsa-lib>=1.2.16.1_1",
+        "glibc>=2.41_1",
+        "libdav1d>=1.5.3_1",
+        "libdrm>=2.4.134_1",
+        "libgcc>=14.2.1+20250405_4",
+        "libglvnd>=1.7.0_1",
+        "libva>=2.24.1_1",
+        "libyuv>=0.0.1922.20251020_1",
+        "shaderc>=2026.4_2",
+        "vulkan-loader>=1.4.363.0_1",
+        "wayland>=1.26.0_1",
+        "zlib>=1.3.2_1"
+      ],
+      "file": "skwd-paper-local-1.0.0beta26_4.x86_64.xbps",
+      "name": "skwd-paper-local",
+      "runtime_crates": 185,
+      "sha256": "f35ebe848e6d8d5d51abd331c783c8f4addf992d488ad99dd4469db2f8e2f3ed",
+      "unchanged_elf": {
+        "/usr/bin/skwd-paper-v2": "20a8ed6148b6804899f799a2f08e4923bb3ae11d934c8d8bb13312d4ca8f91a8",
+        "/usr/bin/skwd-wall-still": "48d071cdd6f463130b47b2857e06425909f56492de3168f7678f295ee8313dcb",
+        "/usr/bin/skwd-wall-vk": "79ac77fac4b03e5e9a581834f1b88759d36af438caab8e0024e28abc2ea2efe5",
+        "/usr/lib/skwd-paper/libavcodec.so.63.1.101": "4eb1f7e54d744d92d655fc597c1342b73f71043d468a4d50029688199b6dc12f",
+        "/usr/lib/skwd-paper/libavformat.so.63.1.101": "414d2fcbe2bc50d73d1ae59db4d5a6b62e43731630f97ce43608132c532cf4f0",
+        "/usr/lib/skwd-paper/libavutil.so.61.1.101": "4a84052cb7dd461400e19489f101d8d08df9cbcc160c5a8a664c9352404f7660",
+        "/usr/lib/skwd-paper/libswresample.so.7.1.101": "cb8584ae4107997de7065a2ddb49c55ffb25e17dcb772e5406a0a7b8d8ee8901",
+        "/usr/lib/skwd-paper/libswscale.so.10.1.101": "a56863d6fe76e7893c1c6343c73983730df55bfb849f338579ef79f19751f842",
+        "/usr/lib/skwd-paper/skwd-paper-tinier": "c7e45bb6874b7a1687900aab1341acfd9bb98783a331339de0a237e22832c64c"
+      },
+      "version": "skwd-paper-local-1.0.0beta26_4"
+    }
+  ],
+  "raw_evidence_sha256": {
+    "client-results.json": "48b80b55a823669b94aeefc08c591868a137fc4c4440fe6325f0f54a0c878154",
+    "server-results.json": "f90ebfbd39b3bbe2fdedae34c951b59cfe0c8d004bbdff6e133ef4f2b23692be"
+  },
+  "issues_resolved": [
+    "XBPS pipe output buffering hid fingerprint before key prompt; stdbuf used, no trust comparison relaxed.",
+    "XBPS dry-run did not refresh remote index; synchronize first, then simulate.",
+    "Source module src/wayland/target was not a build cache; retained, regression test added."
+  ],
+  "not_repeated": [
+    "Rust compilation",
+    "graphical tests"
+  ],
+  "public_binaries_published": false,
+  "production_keys_created": false
+}

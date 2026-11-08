@@ -5,22 +5,37 @@
   "libc": "glibc",
   "port_repository": "https://github.com/SirOtter0/skwd-wall.git",
   "port_commit": "466e95c608b37000491633bdbec6ca801a059714",
-  "package_version": "1.0.0beta26_3",
-  "packages": ["skwd-wall-v2-local", "skwd-deck-local", "skwd-lens-local", "skwd-paper-local"],
+  "package_version": "1.0.0beta26_4",
+  "packages": [
+    "skwd-wall-v2-local",
+    "skwd-deck-local",
+    "skwd-lens-local",
+    "skwd-paper-local"
+  ],
   "source_date_epoch": 1792079636,
   "rust_version": "1.99.0",
   "distribution_approved": false,
   "license_review": {
-    "approved": false,
-    "reviewer": null,
-    "evidence": null,
-    "approved_candidate_sha256": null,
-    "blockers": [
-      "Complete per-dependency notices/copyrights and asset attribution in binary packages; generic license texts alone are insufficient.",
-      "Confirm source-mirror redistribution terms for optional Steamworks SDK/prebuilt vendor inputs; do not infer Valve SDK rights from the Rust wrapper MIT license.",
-      "Include FFmpeg IJG attribution, actual configuration and patchelf change/relink notes with corresponding source delivery."
-    ]
+    "approved": true,
+    "reviewer": "Source/notice review and private Void XBPS rehearsal, 2026-11-08",
+    "evidence": "docs/REDISTRIBUTION-REVIEW.md and review/rehearsal-results.json",
+    "approved_candidate_sha256": "84e7d3a7d751fdaf565583bf07f828f123a687e1fc5d94566047564d217700ba",
+    "blockers": []
   },
-  "signing": {"public_key_spki_sha256": null, "xbps_md5_fingerprint": null, "identity": null},
-  "hosting": {"testing_url": null, "stable_url": null, "public_key_url": null}
+  "signing": {
+    "public_key_spki_sha256": null,
+    "xbps_md5_fingerprint": null,
+    "identity": null
+  },
+  "hosting": {
+    "testing_url": null,
+    "stable_url": null,
+    "public_key_url": null
+  },
+  "validated_binary_base": "1.0.0beta26_3",
+  "release_blockers": [
+    "Owner authorization for definitive key creation and first signed testing-channel publication remains required.",
+    "Production public-key identity, protected publication environment and accessible HTTPS endpoint are not configured.",
+    "Review and bind the exact production candidate, including build provenance, before signing; the recorded candidate belongs to the private rehearsal."
+  ]
 }

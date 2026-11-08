@@ -7,6 +7,10 @@
 
 This repository prepares a separately maintained XBPS distribution workflow. It is **not** an official Void Linux repository or an upstream Skwd release. The port sources are maintained in [SirOtter0/skwd-wall (`feat/void-linux-support`)](https://github.com/SirOtter0/skwd-wall/tree/feat/void-linux-support). No upstream pull request has been opened by this project.
 
+The four prepared revision4 packages preserve the 15 validated executable/library hashes.
+A disposable-key private HTTP rehearsal passed installation, upgrade, tamper rejection
+and removal. Definitive keys and public binary distribution remain unauthorized.
+
 ## Project status
 
 | Area | Status |
@@ -14,10 +18,10 @@ This repository prepares a separately maintained XBPS distribution workflow. It 
 | Pinned public-source build orchestration | Prepared |
 | Package, architecture, dependency and payload checks | Prepared |
 | Source and provenance records | Prepared |
-| Licensing approval gate | Implemented; distribution review pending |
+| Licensing approval gate | Implemented; revision4 review completed; production candidate review required |
 | Offline signing and signed manifest workflow | Prepared; no release key created |
 | Testing-to-stable promotion and signed-byte verification | Prepared; no public channel |
-| Infrastructure CI | Available; checks passing in the latest reported run (16 tests) |
+| Infrastructure CI | Available; checks passing in the latest reported run (25 local tests) |
 | Public binary releases | **Blocked** |
 | End-user installation | **Not supported yet** |
 
@@ -29,7 +33,7 @@ The passing test count describes infrastructure checks, **not** complete runtime
 - **Desktop target:** Wayland, including Niri; graphical compatibility still requires final validation.
 - **Components:** Wall, Deck, Lens and Paper.
 - **Local package names:** `skwd-wall-v2-local`, `skwd-deck-local`, `skwd-lens-local`, `skwd-paper-local`.
-- **Current reviewed package revision:** `1.0.0beta26_3`.
+- **Current reviewed package revision:** `1.0.0beta26_4`.
 
 These are **targets and preparation details**, not a declaration of tested end-user compatibility.
 
@@ -45,7 +49,7 @@ These are **targets and preparation details**, not a declaration of tested end-u
 
 ## Before the first public release
 
-1. Complete the [distribution licensing, notices and source review](docs/LICENSING.md).
+1. Review the completed [redistribution evidence](docs/REDISTRIBUTION-REVIEW.md) and its documented scope.
 2. Review [builder and clean-VM acceptance](docs/BUILD.md), including relevant runtime and graphical checks.
 3. Approve the [key ceremony and signing procedure](docs/KEYS.md).
 4. Approve [hosting and deployment](docs/HOSTING.md) and configure protected environments.

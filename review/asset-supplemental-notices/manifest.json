@@ -1,0 +1,101 @@
+[
+  {
+    "repository": "lukas-w/font-logos",
+    "commit": "d3bf5d299e54595db1b19681a0cc57ab10454857",
+    "path": "LICENSE",
+    "url": "https://raw.githubusercontent.com/lukas-w/font-logos/d3bf5d299e54595db1b19681a0cc57ab10454857/LICENSE",
+    "file": "review/asset-supplemental-notices/lukas-w--font-logos/LICENSE",
+    "sha256": "88d9b4eb60579c191ec391ca04c16130572d7eedc4a86daa58bf28c6e14c9bcd",
+    "git_blob_sha1": "cf1ab25da0349f84a3fdd40032f0ce99db813b8b",
+    "git_blob_cross_checked": true,
+    "scope": "supplemental upstream attribution/license; not a replacement glyph version"
+  },
+  {
+    "repository": "jloughry/Unicode",
+    "commit": "805536fb6f93604da985d80e0c6b099f98f8b4d9",
+    "path": "LICENSE.txt",
+    "url": "https://raw.githubusercontent.com/jloughry/Unicode/805536fb6f93604da985d80e0c6b099f98f8b4d9/LICENSE.txt",
+    "file": "review/asset-supplemental-notices/jloughry--Unicode/LICENSE.txt",
+    "sha256": "11aef1cdf2d58d822e6857e2574870ccc59d4900052bf5c098e319d750e7ac3d",
+    "git_blob_sha1": "f2d63f66d2b770cd0bea2bd283fda802fe30eb2f",
+    "git_blob_cross_checked": true,
+    "scope": "supplemental upstream attribution/license; not a replacement glyph version"
+  },
+  {
+    "repository": "jesseweed/seti-ui",
+    "commit": "2d6c5e68b4ded73c92dac291845ee44e1182d511",
+    "path": "LICENSE.md",
+    "url": "https://raw.githubusercontent.com/jesseweed/seti-ui/2d6c5e68b4ded73c92dac291845ee44e1182d511/LICENSE.md",
+    "file": "review/asset-supplemental-notices/jesseweed--seti-ui/LICENSE.md",
+    "sha256": "d4d2d888c6a0a220a7b0e2d6013cf37539b0e05ef937002b3b33bdb364575b88",
+    "git_blob_sha1": "0686d9e64771ecfe3d755fbc412be64a3a4b2a77",
+    "git_blob_cross_checked": true,
+    "scope": "supplemental upstream attribution/license; not a replacement glyph version"
+  },
+  {
+    "repository": "vorillaz/devicons",
+    "commit": "ed0c56720767431c55ed56ec5abe94bee9b791c5",
+    "path": "LICENSE",
+    "url": "https://raw.githubusercontent.com/vorillaz/devicons/ed0c56720767431c55ed56ec5abe94bee9b791c5/LICENSE",
+    "file": "review/asset-supplemental-notices/vorillaz--devicons/LICENSE",
+    "sha256": "508a77d2e7b51d98adeed32648ad124b7b30241a8e70b2e72c99f92d8e5874d1",
+    "git_blob_sha1": "9cf106272ac3b56b0c4c80218e8fc10a664ca5f4",
+    "git_blob_cross_checked": true,
+    "scope": "supplemental upstream attribution/license; not a replacement glyph version"
+  },
+  {
+    "repository": "devicons/devicon",
+    "commit": "32fe1d3b3f36ad11f90ab94f7db59738139c2bf6",
+    "path": "LICENSE",
+    "url": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/LICENSE",
+    "file": "review/asset-supplemental-notices/devicons--devicon/LICENSE",
+    "sha256": "121194741d4a915b9f5890fdd6dd95121f9b1f816517c792358d72d7c838d664",
+    "git_blob_sha1": "fcc9b6677248224a60d060ccc6851eb420fa003d",
+    "git_blob_cross_checked": true,
+    "scope": "supplemental upstream attribution/license; not a replacement glyph version"
+  },
+  {
+    "repository": "source-foundry/Hack",
+    "commit": "a737c121cabb337fdfe655d8c7304729f351e30f",
+    "path": "LICENSE.md",
+    "url": "https://raw.githubusercontent.com/source-foundry/Hack/a737c121cabb337fdfe655d8c7304729f351e30f/LICENSE.md",
+    "file": "review/asset-supplemental-notices/source-foundry--Hack/LICENSE.md",
+    "sha256": "1f61bb7c790c59b4b0ecdf304628b94e42ae4c8020094a8c3da73381ab212623",
+    "git_blob_sha1": "08927e504fce744f928c584c6e4a07328f2e94ed",
+    "git_blob_cross_checked": true,
+    "scope": "supplemental upstream attribution/license; not a replacement glyph version"
+  },
+  {
+    "repository": "AndreLZGava/font-awesome-extension",
+    "commit": "09d80249058ee8018a45da30add4339289dbb466",
+    "path": "README.md",
+    "url": "https://raw.githubusercontent.com/AndreLZGava/font-awesome-extension/09d80249058ee8018a45da30add4339289dbb466/README.md",
+    "file": "review/asset-supplemental-notices/AndreLZGava--font-awesome-extension/README.md",
+    "sha256": "286e163928a042b3a3514a6e2d5cafb00ec86b613c84670f660717387d44be54",
+    "git_blob_sha1": "702705cd9ac3211648cd7181e3a911e5df4ce196",
+    "git_blob_cross_checked": false,
+    "scope": "supplemental upstream attribution/license; not a replacement glyph version"
+  },
+  {
+    "repository": "erikflowers/weather-icons",
+    "commit": "bb80982bf1f43f2d57f9dd753e7413bf88beb9ed",
+    "path": "README.md",
+    "url": "https://raw.githubusercontent.com/erikflowers/weather-icons/bb80982bf1f43f2d57f9dd753e7413bf88beb9ed/README.md",
+    "file": "review/asset-supplemental-notices/erikflowers--weather-icons/README.md",
+    "sha256": "fe5d8059a785adb47571fbae05d55ae88059224f1817dc1e797504a6098d6161",
+    "git_blob_sha1": "670c53df2c77ea25ffdcfc2d26237abf90ae0dd9",
+    "git_blob_cross_checked": false,
+    "scope": "supplemental upstream attribution/license; not a replacement glyph version"
+  },
+  {
+    "repository": "AndreLZGava/font-awesome-extension",
+    "commit": "09d80249058ee8018a45da30add4339289dbb466",
+    "path": "LICENCE",
+    "url": "https://raw.githubusercontent.com/AndreLZGava/font-awesome-extension/09d80249058ee8018a45da30add4339289dbb466/LICENCE",
+    "file": "review/asset-supplemental-notices/AndreLZGava--font-awesome-extension/LICENCE",
+    "sha256": "b47b15d771c4507a75ff65beca3a78168d6af4cca9b45177a1aa817139c64ba5",
+    "git_blob_sha1": "a2f736647822bec9215890f6a3bde699831f8ee5",
+    "git_blob_cross_checked": true,
+    "scope": "original icon font license"
+  }
+]

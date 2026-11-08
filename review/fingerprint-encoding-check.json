@@ -1,0 +1,8 @@
+{
+  "test": "RFC4251/native XBPS fingerprint against existing trusted Void public key; no private key accessed",
+  "result": "PASS",
+  "identity": {
+    "spki_sha256": "43b40c9e564de65363d00959de80eb4a87e79450bc7217e1c96d09f4acd8529e",
+    "xbps_md5_fingerprint": "0f:fa:c3:8e:fd:cd:c9:52:88:f0:34:ca:df:6c:c6:fa"
+  }
+}

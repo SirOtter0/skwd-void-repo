@@ -1,0 +1,15 @@
+Corresponding source for this exact community build accompanies the authenticated
+repository/release as corresponding-source.tar.xz. It contains the four original
+component sources, exact patched Cargo.lock/vendor, FFmpeg 9.0.1 source, patches,
+build/repack scripts, native/asset notices and input manifests. Keep it with the
+binary release; do not substitute branch heads. No personal workstation files or
+credentials are needed to build. Public origins and hashes are recorded there.
+
+MPL-2.0 component: option-ext 0.2.0, unmodified source at suite/vendor/option-ext-0.2.0
+inside that archive; also available from the exact crates.io version:
+https://crates.io/api/v1/crates/option-ext/0.2.0/download
+Its LICENSE.txt is included in the notices. You may obtain/use/modify/distribute
+that source under the MPL-2.0. Larger original Skwd code retains its MIT license.
+The distribution does not restrict reverse engineering needed to debug replacement
+LGPL libraries. No claim is made that optional proprietary SDKs or model weights
+are covered by a Rust wrapper's license or included in these packages.

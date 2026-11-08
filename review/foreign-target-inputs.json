@@ -1,0 +1,102 @@
+[
+  {
+    "crate": "vcpkg-0.2.15",
+    "declared_license": "MIT/Apache-2.0",
+    "native_named_files": 341,
+    "zero_length_files": 341,
+    "min_bytes": 0,
+    "max_bytes": 0,
+    "example_headers": [
+      {
+        "path": "test-data/normalized/installed/x64-windows/lib/icuin.lib",
+        "magic_hex": ""
+      },
+      {
+        "path": "test-data/normalized/installed/x64-windows/lib/boost_regex-vc140-mt.lib",
+        "magic_hex": ""
+      }
+    ]
+  },
+  {
+    "crate": "winapi-x86_64-pc-windows-gnu-0.4.0",
+    "declared_license": "MIT/Apache-2.0",
+    "native_named_files": 1416,
+    "zero_length_files": 0,
+    "min_bytes": 89,
+    "max_bytes": 1670630,
+    "example_headers": [
+      {
+        "path": "lib/libwinapi_onecore-mswsock.a",
+        "magic_hex": "213c617263683e0a2f20202020202020"
+      },
+      {
+        "path": "lib/libwinapi_onecoreuap-api-ms-win-core-io-l1-1-1.a",
+        "magic_hex": "213c617263683e0a2f20202020202020"
+      }
+    ]
+  },
+  {
+    "crate": "winapi-i686-pc-windows-gnu-0.4.0",
+    "declared_license": "MIT/Apache-2.0",
+    "native_named_files": 1387,
+    "zero_length_files": 0,
+    "min_bytes": 89,
+    "max_bytes": 1658338,
+    "example_headers": [
+      {
+        "path": "lib/libwinapi_onecore-mswsock.a",
+        "magic_hex": "213c617263683e0a2f20202020202020"
+      },
+      {
+        "path": "lib/libwinapi_onecoreuap-api-ms-win-core-io-l1-1-1.a",
+        "magic_hex": "213c617263683e0a2f20202020202020"
+      }
+    ]
+  },
+  {
+    "crate": "windows_x86_64_msvc-0.52.6",
+    "declared_license": "MIT OR Apache-2.0",
+    "native_named_files": 1,
+    "zero_length_files": 0,
+    "min_bytes": 5210890,
+    "max_bytes": 5210890,
+    "example_headers": [
+      {
+        "path": "lib/windows.0.52.0.lib",
+        "magic_hex": "213c617263683e0a2f20202020202020"
+      }
+    ]
+  },
+  {
+    "crate": "libloading-0.8.9",
+    "declared_license": "ISC",
+    "native_named_files": 2,
+    "zero_length_files": 0,
+    "min_bytes": 2560,
+    "max_bytes": 3072,
+    "example_headers": [
+      {
+        "path": "tests/nagisa64.dll",
+        "magic_hex": "4d5a90000300000004000000ffff0000"
+      },
+      {
+        "path": "tests/nagisa32.dll",
+        "magic_hex": "4d5a90000300000004000000ffff0000"
+      }
+    ]
+  },
+  {
+    "crate": "wit-component-0.244.0",
+    "declared_license": "Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIT",
+    "native_named_files": 1,
+    "zero_length_files": 0,
+    "min_bytes": 1728,
+    "max_bytes": 1728,
+    "example_headers": [
+      {
+        "path": "libdl.so",
+        "magic_hex": "0061736d01000000001b0864796c696e"
+      }
+    ]
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "repository": "ryanoasis/nerd-fonts",
+  "commit": "fa7b859994228a9c8759f99c55a8d31ee92a1b5e",
+  "embedded_font_sha256": "71db104aa66567d0efe0b98758f9dfc1895573a453fe85fb53d1c38544a55106",
+  "matches": [
+    {
+      "path": "patched-fonts/NerdFontsSymbolsOnly/SymbolsNerdFont-Regular.ttf",
+      "git_blob_sha1": "38c24fbbac296e834655a2888017d027684ff6d8"
+    }
+  ]
+}

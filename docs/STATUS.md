@@ -1,29 +1,25 @@
-# Preparation result — 2026-11-02
+# Preparation result — 2026-11-08
 
 | Area | State |
 |---|---|
-| Public repository | Infrastructure only; no signed package channel |
-| Four MIT projects | Licenses inspected; conditional redistribution permitted |
-| Full binary/source notice clearance | BLOCKED: see LICENSING.md and policy/release.json |
-| Independent clean builds/install/runtime/removal | Previously completed for pinned port; evidence linked in BUILD.md |
-| Existing four package archives | Static inspection passed; names/versions/architecture/payload/dependencies retained |
-| Source inventory | 1,310 registry lockfile entries across components (overapproximation); exact lock hashes match clean build |
-| Infrastructure unit tests | 16 PASS |
-| Shell syntax / Python compilation | PASS |
-| XBPS fingerprint derivation | Matches an existing trusted Void public key; no private key used |
-| New CI build orchestration | Prepared, disabled, not executed |
-| Signing/remote XBPS end-to-end | Pending approved rehearsal; no key generated |
-| Pages publication | Inactive example; no deployment or live install URL |
-| Upstream PR | Not opened |
+| Four packages | Legal revision1.0.0beta26_4 prepared locally;15 ELF hashes unchanged |
+| License/NOTICE/asset attribution | Completed for reviewed runtime configuration; evidence in REDISTRIBUTION-REVIEW.md |
+| Sources | Complete local source/recipe delivery;45,595 vendor files verified; four offline/frozen metadata checks pass |
+| Optional Steam SDK | No native SDK files present; unused wrappers retained; zero exclusions recorded |
+| FFmpeg | IJG/native notices, exact source/configuration/build/change/relink information supplied |
+| Independent compilation/graphics | Previous successful results reused; no unchanged build or graphical test repeated |
+| Disposable RSA/XBPS signing | PASS: native signatures and additional signed index/source manifest |
+| Remote clean-client acceptance | PASS: key fingerprint, install, update simulation/application, hash/signature checks |
+| Tamper rejection | PASS: altered archive and invalid signature each rejected; installed bytes unchanged |
+| Removal | PASS: four packages, test repo config and key trust removed; services unchanged; package DB clean |
+| Definitive key / public binaries / Pages | NOT CREATED / NOT PUBLISHED / NOT ACTIVATED |
+| Upstream PR | NOT OPENED |
 
-All four existing packages total 81,633,615 compressed bytes. Their hashes and
-sanitized metadata are in review/package-inspection.json; source/patch/lock hashes
-are in review/verified-source-inputs.json. No application binary or private test
-artifact is committed here. Detailed generated license inventory is locally kept
-outside Git; its hash, counts and regeneration command are published for review.
+Both private test VMs are shut down. Experimental private key was only in tmpfs
+and is absent. No personal credentials, host configuration or system packages were
+changed. Private raw evidence/artifacts remain outside Git; review/rehearsal-results.json
+contains the public, explicitly TEST-ONLY summary and hashes.
 
-Next decision: complete the specifically identified compliance deliverables and
-review a disposable-key signing rehearsal. Definitive key creation and first
-signed testing-channel publication both require explicit owner authorization.
-No authorization to publish a signed channel has been inferred from repository
-creation or infrastructure publication.
+Ready to request owner authorization for definitive-key ceremony and the first
+signed testing-channel release. That authorization, exact production-candidate
+review and public HTTPS verification remain separate required steps.

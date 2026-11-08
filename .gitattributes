@@ -1,0 +1,4 @@
+# Preserve upstream legal texts byte-for-byte, including original CRLF/whitespace.
+/review/upstream-notices/** -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+/review/crate-upstream-notices/** -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+/review/asset-supplemental-notices/** -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
