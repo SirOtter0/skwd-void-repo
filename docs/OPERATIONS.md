@@ -1,6 +1,12 @@
 # Release and channel operations
 
-## Before the first public release
+## Current beta29_2 release
+
+Beta29_2 was signed offline with the existing production key and published as a [versioned GitHub release](https://github.com/SirOtter0/skwd-void-repo/releases/tag/xbps-beta29_2). The signed manifest binds the repo index, four XBPS, `.sig2` files and sources. Anonymous HTTPS downloads and installation from the authenticated local snapshot passed in a clean Void VM. See [installation and recovery](USERS.md). Future signing and publication require separate owner approval.
+
+## Historical release-channel rehearsal and proposed Pages workflow
+
+### Before the first public release
 
 The notice/source work and owner-authorized disposable-key rehearsal are complete;
 see STATUS.md and REDISTRIBUTION-REVIEW.md. Still required: explicit owner approval
@@ -13,7 +19,7 @@ Only infrastructure checks run on hosted PR runners. No application code runs on
 PR events and no job has a signing secret. No workflow_run/pull_request_target
 handoff accepts untrusted build artifacts into a privileged signer.
 
-## Planned authorized procedure
+### Planned authorized procedure
 
 1. Complete notices/attribution/source review, update pinned port/revision if
    necessary, then build a fresh local candidate in a disposable VM. Use the exact
@@ -52,7 +58,7 @@ Production-environment gates and platform settings are not configured by merely
 committing a YAML file. Ensure required reviewers, no self-approval where possible,
 protected main branch, minimal tokens, and immutable reviewed workflow revisions.
 
-## Updates / rollback
+### Updates / rollback
 
 A public package filename/version is immutable. Bump all coordinated revisions for
 changed contents, retain previous packages/signatures/source and test both upgrade

@@ -1,4 +1,10 @@
-# Hosting proposal — no package channel deployed
+# Release hosting
+
+## Current public origin
+
+The [versioned GitHub release](https://github.com/SirOtter0/skwd-void-repo/releases/tag/xbps-beta29_2) serves beta29_2 over HTTPS. Anonymous downloads and XBPS access to the release asset prefix were checked. Users should follow the [English installation guide](../README.md#installation) and install from the authenticated local snapshot after verifying `SHA256SUMS.sig`. This release uses GitHub Releases.
+
+## Historical GitHub Pages proposal
 
 Use GitHub Pages initially for two small flat HTTPS XBPS channels: testing and
 stable. They are proposed directory names, not live repository URLs. Do not print

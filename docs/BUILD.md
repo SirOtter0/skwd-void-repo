@@ -1,5 +1,11 @@
 # Controlled builders
 
+## Current beta29_2 build and assembly
+
+Use the [beta29_2 build guide](https://github.com/SirOtter0/skwd-wall/blob/release/beta29_2-candidate/docs/void/BETA29-2-REBUILD.md) with the authenticated [corresponding sources](https://github.com/SirOtter0/skwd-void-repo/releases/download/xbps-beta29_2/corresponding-source.tar.xz). That guide distinguishes the Wall rebuild, the reuse of pinned beta29_1 inputs and the assembly comparison. A fresh independent rebuild of all four beta29_2 components was not performed.
+
+## Historical beta26 builder and rehearsal
+
 Use a disposable dedicated Void x86_64 glibc/runit VM. Never install development
 prerequisites on a user's unrelated desktop. No signing key, publishing token,
 SSH credential or personal HOME belongs on the builder. No public PR code runs on
@@ -41,7 +47,7 @@ Record package versions, source/preparer/patch hashes and SOURCE_DATE_EPOCH for 
 release. Two earlier independent builds produced identical ELF and normalized XBPS
 bytes in their recorded environment; no general cross-toolchain guarantee is made.
 
-## Clean runtime acceptance
+### Clean runtime acceptance
 
 Before signing, install all four newly built packages in another disposable clean
 Void VM using a local repository. Record the dry-run and real transaction, run
@@ -55,7 +61,7 @@ Paper static synthetic image and surface removal, Lens empty pack listing.
 Capture only the VM framebuffer. No models or network content are needed.
 Keep real Niri/NVIDIA coverage distinct from software-rendered VM coverage.
 
-## CI status
+### CI status
 
 The hosted PR workflow tests infrastructure only, with a read-only token and no
 secrets. The manual build workflow is disabled unless ENABLE_BINARY_BUILD=true
@@ -68,7 +74,7 @@ No binary upload step is enabled: an Actions artifact can be accessible to other
 and is still redistribution. Obtain explicit release approval before adding an
 approved unsigned candidate-transfer job. The build VM never receives the signing key.
 
-## Legal revision4
+### Legal revision4
 
 The pipeline first builds the original revision3 payload from the validated port,
 then records the actual Cargo fingerprint dependency closure and reassembles all
