@@ -36,13 +36,15 @@ def sign(key, payload, signature):
     run("openssl", "dgst", "-sha256", "-sign", key, "-out", signature, payload)
 
 
-def make_release(directory, payload, key, version, published_key, invalid_sig=False):
+def make_release(directory, payload, key, version, published_key, invalid_sig=False, native=False):
     directory.mkdir(parents=True)
     files = []
     for package in PACKAGES:
         dependencies = []
         if package == PACKAGES[0]:
             dependencies = ["-D", f"{PACKAGES[1]}-{version} {PACKAGES[3]}-{version}"]
+            if native:
+                dependencies[1] += " skwd-lab-system-dependency>=1.0_1"
         relative = payload / "usr/share/skwd-channel-lab" / package
         relative.parent.mkdir(parents=True, exist_ok=True)
         relative.write_text(version + "\n")
@@ -92,6 +94,32 @@ class Handler(SimpleHTTPRequestHandler):
             self.end_headers()
             return
         case = self.server.case
+        if name.startswith("/native/") or name.startswith("/history/"):
+            if case == "unavailable" and name.startswith("/native/"):
+                self.send_error(503)
+                return
+            file = name.rsplit("/", 1)[1]
+            if name.startswith("/history/"):
+                directory = "initial"
+            elif file == "x86_64-repodata":
+                directory = "initial" if case in {"initial", "stale"} else "update"
+            elif REV[0] in file:
+                directory = "initial"
+            else:
+                directory = "bad-signature" if case == "bad-signature" else "update"
+                if file.endswith(".xbps") and case in {"interrupted", "inconsistent"}:
+                    if case == "inconsistent":
+                        self.send_error(404)
+                    else:
+                        self.send_response(200)
+                        self.send_header("Content-Length", "40000")
+                        self.end_headers()
+                        self.wfile.write(b"incomplete")
+                        self.close_connection = True
+                    return
+            self.path = f"/{directory}/{file}"
+            super().do_GET()
+            return
         if case == "unavailable":
             self.send_error(503)
             return
@@ -110,7 +138,7 @@ class Handler(SimpleHTTPRequestHandler):
         super().do_GET()
 
 
-def build_fixture(work, media, origin):
+def build_fixture(work, media, origin, native=False):
     key = work / "test-key.pem"
     pub = work / "test-public.pem"
     run("openssl", "genrsa", "-out", key, "2048")
@@ -119,7 +147,7 @@ def build_fixture(work, media, origin):
     payload = work / "payload"
     for index, label in enumerate(("initial", "update")):
         case = web / label
-        manifest = make_release(case, payload, key, REV[index], pub)
+        manifest = make_release(case, payload, key, REV[index], pub, native=native)
         channel(case, REV[index], index + 1, manifest, key)
     cases = {"initial", "update", "unavailable"}
     index = web / "update"
@@ -129,7 +157,7 @@ def build_fixture(work, media, origin):
         version = REV[0] if label == "newer-sequence-older-version" else REV[1]
         case = web / label
         if label == "bad-signature":
-            manifest = make_release(case, payload, key, version, pub, invalid_sig=True)
+            manifest = make_release(case, payload, key, version, pub, invalid_sig=True, native=native)
         else:
             shutil.copytree(web / "initial" if version == REV[0] else index, case)
             manifest = sha(case / "SHA256SUMS")
@@ -141,6 +169,18 @@ def build_fixture(work, media, origin):
             other = work / "other-test-key.pem"
             run("openssl", "genrsa", "-out", other, "2048")
             run("openssl", "pkey", "-in", other, "-pubout", "-out", case / "xbps-public.pem")
+    if native:
+        os.utime(web / "initial" / "x86_64-repodata", (time.time() - 120,) * 2)
+        cases.update({"stale", "inconsistent"})
+        official = web / "void"
+        official.mkdir()
+        name = "skwd-lab-system-dependency-1.0_1"
+        archive = official / f"{name}.x86_64.xbps"
+        run("xbps-create", "-A", "x86_64", "-n", name, "-s", "Lab system dependency",
+            payload, cwd=official)
+        run("xbps-rindex", "-a", archive)
+        run("xbps-rindex", "--privkey", key, "--sign", "--signedby", "Lab only", official)
+        run("xbps-rindex", "--privkey", key, "--sign-pkg", archive)
     metadata = run("xbps-query", "-i", "-v", "-R", "--repository", web / "initial", "-L")
     fingerprint = re.search(rb"(?:[0-9a-f]{2}:){15}[0-9a-f]{2}", metadata)[0].decode()
     spki = hashlib.sha256(run("openssl", "pkey", "-pubin", "-in", pub, "-outform", "DER")).hexdigest()
@@ -153,7 +193,8 @@ def build_fixture(work, media, origin):
         script, count = re.subn(rf'^{name} = ".*"$', f'{name} = "{value}"', script, flags=re.M)
         assert count == 1
     script = script.replace("/var/lib/skwd-xbps", "/var/lib/skwd-xbps-lab")
-    script = script.replace("/etc/xbps.d/30-skwd-void.conf", "/run/skwd-channel-lab-conf/skwd.conf")
+    if not native:
+        script = script.replace("/etc/xbps.d/30-skwd-void.conf", "/run/skwd-channel-lab-conf/skwd.conf")
     (media / "test-sync-channel.py").write_text(script)
     (media / "xbps-fingerprint").write_text(fingerprint + "\n")
     return web, cases
@@ -164,6 +205,7 @@ def main():
     parser.add_argument("--base", required=True, type=Path, help="known Void guest base qcow2")
     parser.add_argument("--console", required=True, type=Path, help="existing guest serial login helper")
     parser.add_argument("--output", type=Path, help="parent directory for the new test artifacts")
+    parser.add_argument("--native", action="store_true", help="test the native HTTPS repository")
     args = parser.parse_args()
     os.umask(0o077)
     work = Path(tempfile.mkdtemp(prefix="skwd-xbps-channel.", dir=args.output))
@@ -174,7 +216,8 @@ def main():
     run("openssl", "req", "-x509", "-newkey", "rsa:2048", "-nodes", "-days", "1",
         "-subj", "/CN=Skwd channel VM TEST ONLY", "-addext", "subjectAltName=DNS:repo.skwd.test",
         "-keyout", tls_key, "-out", media / "tls-cert.pem", stderr=subprocess.DEVNULL)
-    shutil.copyfile(REPO / "tests/channel-vm-guest.sh", media / "guest.sh")
+    guest = "native-vm-guest.sh" if args.native else "channel-vm-guest.sh"
+    shutil.copyfile(REPO / "tests" / guest, media / "guest.sh")
     run("qemu-img", "create", "-f", "qcow2", "-F", "qcow2", "-b", args.base.resolve(), work / "guest.qcow2")
     (work / "logs").mkdir()
     console = work / "console.py"
@@ -183,7 +226,7 @@ def main():
                              functools.partial(Handler, directory=work / "web")) as server:
         origin = f"https://repo.skwd.test:{server.server_port}"
         (media / "origin").write_text(origin + "\n")
-        _, server.cases = build_fixture(work, media, origin)
+        _, server.cases = build_fixture(work, media, origin, native=args.native)
         run("mkisofs", "-quiet", "-J", "-R", "-o", work / "bootstrap.iso", media)
         server.case = "initial"
         context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)

@@ -44,7 +44,7 @@ openssl dgst -sha256 -sign /offline/path/to/existing-xbps-key.pem \
     -out channel.sig channel.payload
 ```
 
-5. Back in the staging directory, wrap the signature and verified payload. Review the exact response and helper hash independently. After approval, land the reviewed scripts, documentation and `stable/channel.json` together on `main`, where the client fetches them. Remove the pending-activation notice in the same change. Include only approved documentation, scripts and the signed envelope. Keep the staging directory and private files off the remote. From a clean Void VM, fetch the public helper and channel, run Quick installation and the documented update command, then check the four package versions and `xbps-pkgdb -a` before announcing the channel.
+5. Back in the staging directory, wrap the signature and verified payload. Review the exact response and helper hash independently. After approval, land the reviewed scripts, documentation and `stable/channel.json` together on `main`, where the client fetches them. Remove the pending-activation notice in the same change. Include only approved documentation, scripts and the signed envelope. Keep the staging directory and private files off the remote. From a clean Void VM, fetch the public helper and channel, run Authenticated installation and the documented authenticated update command, then check the four package versions and `xbps-pkgdb -a` before announcing the channel.
 
 ```sh
 python3 scripts/channel-envelope.py pack /path/to/stage/channel.payload \

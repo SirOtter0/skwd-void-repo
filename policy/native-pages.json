@@ -1,0 +1,9 @@
+{
+  "schema": 1,
+  "releases": [
+    {
+      "version": "1.0.0beta29_2",
+      "manifest_sha256": "1c68079236a0237c0751532b400f66817ffb300877b59d4ba703ad173a922749"
+    }
+  ]
+}

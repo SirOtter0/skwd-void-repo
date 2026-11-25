@@ -1,22 +1,35 @@
 # Use Skwd-wall beta29_2 on Void Linux
 
-This external community port targets Void Linux x86_64 glibc with runit. Use the [installation guide](../README.md#advanced-verified-installation) to authenticate the production key, verify `SHA256SUMS.sig`, check the signed hashes and package signatures, and install from the verified local snapshot. The [original installation guide attached to beta29_2](https://github.com/SirOtter0/skwd-void-repo/releases/download/xbps-beta29_2/BETA29-2-SIGNED-INSTALLATION.md) remains available in Spanish. [Public beta29_2 release](https://github.com/SirOtter0/skwd-void-repo/releases/tag/xbps-beta29_2)
+This external community port targets Void Linux x86_64 glibc with runit. See the [installation methods](../README.md#quick-installation) for native XBPS, the authenticated channel and manual verification. The [original installation guide attached to beta29_2](https://github.com/SirOtter0/skwd-void-repo/releases/download/xbps-beta29_2/BETA29-2-SIGNED-INSTALLATION.md) remains available in Spanish. [Public beta29_2 release](https://github.com/SirOtter0/skwd-void-repo/releases/tag/xbps-beta29_2)
 
 Start Skwd-wall as your desktop user. If Deck is already running in the session, reuse it. [Startup commands](../README.md#running-skwd-wall)
 
-## Stable channel
+## Installation and updates
 
-Follow [Quick installation](../README.md#quick-installation) to register the authenticated local snapshot. To retrieve a new version and apply regular Void updates:
+[Quick installation](../README.md#quick-installation) describes the proposed native method. It will be available after Pages activation. Use the [authenticated channel](../README.md#authenticated-installation) or the [advanced manual procedure](../README.md#advanced-manual-verification) in the meantime.
+
+Native users update with `sudo xbps-install -Su`. XBPS resolves the exact Wall dependencies for Deck and Paper and updates Lens if it is installed. For authenticated users, run:
 
 ```sh
 sudo /usr/local/sbin/skwd-xbps-sync && sudo xbps-install -Su
 ```
 
-When the server is unavailable or authentication fails, the helper leaves the last verified snapshot in place. `xbps-install -Su` alone uses that snapshot for Skwd and continues to use the configured Void repositories for the rest of the system. For rollback, retain a previous `snapshot-*` under `/var/lib/skwd-xbps` and use the explicit four-package procedure below. Keep the active snapshot and its channel metadata to preserve the replay check.
+Keep a backup of Skwd settings and catalogue data, and retain a previous verified package set for rollback. If the authenticated origin is unavailable or verification fails, its helper keeps the previous snapshot. Plain XBPS uses that snapshot and continues to use the configured Void repositories for the rest of the system.
 
-## Updating
+## Switching repository methods
 
-Save your Skwd settings and catalogue, retain the complete previous verified XBPS set and stop any Skwd processes you started. Follow [Advanced verified installation](../README.md#advanced-verified-installation) with the intended release. Review the four version-pinned entries in the dry run, apply the coordinated update and run `xbps-pkgdb -a`. Restart Deck and Wall normally from the graphical session.
+Use only one Skwd repository for routine XBPS transactions. Both methods use `/etc/xbps.d/30-skwd-void.conf`. Check for duplicate Skwd declarations in `/etc/xbps.d` and `/usr/share/xbps.d` before switching. Wait for XBPS and synchronization to finish before editing the file.
+
+**Authenticated to native.** This is an explicit choice to use native package signatures without the channel's signed index and freshness checks. After Pages activation, probe the native origin and check its key fingerprint against the independent reference in Quick installation:
+
+```sh
+sudo xbps-install -i -R https://sirotter0.github.io/skwd-void-repo -S
+sudoedit /etc/xbps.d/30-skwd-void.conf
+```
+
+Replace the repository line only if it currently says `repository=/var/lib/skwd-xbps/current`. Set it to `repository=https://sirotter0.github.io/skwd-void-repo`. Keep the helper and its snapshots if you might switch back. Then run `sudo xbps-install -Su`.
+
+**Native to authenticated.** Install and verify the helper as documented, then run `sudo /usr/local/sbin/skwd-xbps-sync` without `--configure` to authenticate a local snapshot. Use `sudoedit /etc/xbps.d/30-skwd-void.conf` to replace the native URL with `repository=/var/lib/skwd-xbps/current`. Use the authenticated update command thereafter. Both migrations keep installed packages and user data. Check any manually configured XBPS holds or repository locks if packages do not move to the selected repository.
 
 ## Uninstalling
 
@@ -33,10 +46,11 @@ sudo xbps-pkgdb -a
 
 Your configuration, catalogue and cache remain in your user directories.
 
-To stop using the stable channel, remove its XBPS configuration and its helper if you installed them with Quick installation. The verified snapshots under `/var/lib/skwd-xbps` remain available for recovery.
+To remove the Skwd repository, remove its configuration after checking which method it selects. Remove the helper only if you installed it for authenticated updates. The verified snapshots under `/var/lib/skwd-xbps` remain available for recovery.
 
 ```sh
 sudo unlink /etc/xbps.d/30-skwd-void.conf
+# If you installed the authenticated helper and no longer need it:
 sudo unlink /usr/local/sbin/skwd-xbps-sync
 ```
 
