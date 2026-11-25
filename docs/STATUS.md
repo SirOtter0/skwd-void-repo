@@ -2,7 +2,7 @@
 
 ## Current public release
 
-[beta29_2](https://github.com/SirOtter0/skwd-void-repo/releases/tag/xbps-beta29_2) is public and production-signed for Void Linux x86_64 glibc/runit. Anonymous HTTPS downloads, the signed manifest and all four package signatures were verified. A clean Void VM installed all four packages from an authenticated local snapshot and passed `xbps-pkgdb -a`. Wall rendered under Niri/Wayland with NVIDIA RTX 4060 Ti. See the [installation guide](../README.md#advanced-verified-installation) and the [scope of the build verification](https://github.com/SirOtter0/skwd-wall/blob/release/beta29_2-candidate/docs/void/BETA29-2-REBUILD.md).
+[beta29_2](https://github.com/SirOtter0/skwd-void-repo/releases/tag/xbps-beta29_2) is public and production-signed for Void Linux x86_64 glibc/runit. Anonymous HTTPS downloads, the signed manifest and all four package signatures were verified. A clean Void VM installed all four packages from an authenticated local snapshot and passed `xbps-pkgdb -a`. Wall rendered under Niri/Wayland with NVIDIA RTX 4060 Ti. The native Pages repository is active. A clean Void VM verified the package key, the three default components, optional Lens, plain `xbps-install -Su` and migration to and from the authenticated channel. See the [installation guide](../README.md#quick-installation) and the [scope of the build verification](https://github.com/SirOtter0/skwd-wall/blob/release/beta29_2-candidate/docs/void/BETA29-2-REBUILD.md).
 
 ## Historical preparation result — 2026-11-08
 

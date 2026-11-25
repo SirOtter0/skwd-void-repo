@@ -1,72 +1,19 @@
 # Release and channel operations
 
-## Current beta29_2 release
+The signed [beta29_2 GitHub release](https://github.com/SirOtter0/skwd-void-repo/releases/tag/xbps-beta29_2) is the immutable source of the native Pages repository and the authenticated channel. See the [user guide](USERS.md) for installation and recovery. Production signing and publishing require separate owner approval.
 
-Beta29_2 was signed offline with the existing production key and published as a [versioned GitHub release](https://github.com/SirOtter0/skwd-void-repo/releases/tag/xbps-beta29_2). The signed manifest binds the repo index, four XBPS, `.sig2` files and sources. Anonymous HTTPS downloads and installation from the authenticated local snapshot passed in a clean Void VM. See [installation and recovery](USERS.md). Future signing and publication require separate owner approval.
+## Publish a coordinated version
 
-## Historical release-channel rehearsal and proposed Pages workflow
+1. Build and test Wall, Deck, Paper, and Lens in isolated Void guests. Check installation with official dependencies, coordinated updates and rollback. Review corresponding sources and licenses before signing. Keep Wall's exact Deck and Paper pins and keep Lens optional.
+2. Sign the approved XBPS packages and release manifest offline with the existing production key. Verify the package signatures, index and manifest against the independent public identity. Keep the private key outside CI. [Signing procedure](KEYS.md)
+3. Publish the versioned GitHub release with the four packages, their signatures, the index, the signed manifest, corresponding sources and notices. Verify anonymous HTTPS access and the signed digests before promoting it.
+4. Append the reviewed version and manifest SHA-256 to [the Pages policy](../policy/native-pages.json). Use a new package version for any changed package bytes. Retain earlier policy entries while clients may still use their indexes.
+5. Review the staged artifact and dispatch the [native Pages workflow](https://github.com/SirOtter0/skwd-void-repo/actions/workflows/native-xbps-pages.yml) manually from reviewed `main`. After assembly succeeds, an authorized reviewer approves the complete artifact in the protected `github-pages` environment. [Deployment procedure](NATIVE-XBPS.md#deployment-after-approval)
+6. Separately prepare and sign the authenticated channel payload using the next sequence number. Verify its manifest binding and expiry before publishing the signed envelope. Renew the metadata before expiry even when the package version stays the same. [Authenticated channel procedure](STABLE-CHANNEL.md#maintainer-procedure)
+7. Fetch and verify the public Pages files against the release. In a clean Void VM, check native installation and `xbps-install -Su` with official Void repositories. Verify the authenticated synchronization path independently, including the signed index, versions and sequence. Record the workflow and test results before announcing the version.
 
-### Before the first public release
+## Retention, propagation and rollback
 
-The notice/source work and owner-authorized disposable-key rehearsal are complete;
-see STATUS.md and REDISTRIBUTION-REVIEW.md. Still required: explicit owner approval
-for definitive-key creation and first testing publication, authenticated production
-fingerprints/backup ceremony, exact candidate/provenance review and protected HTTPS
-publication settings. No signing/publishing secret is configured in CI.
+The complete Pages artifact is capped at 900 MB against the 1 GB site limit. Track the 100 GB/month soft bandwidth limit and keep the site within the 10-minute deployment timeout. Keep old packages and their signatures on Pages long enough for cached indexes to resolve. CDN propagation can temporarily expose an index ahead of its packages. Retry after propagation and confirm that the package files and signatures match the approved release.
 
-No deployment runs merely because this repository is updated.
-Only infrastructure checks run on hosted PR runners. No application code runs on
-PR events and no job has a signing secret. No workflow_run/pull_request_target
-handoff accepts untrusted build artifacts into a privileged signer.
-
-### Planned authorized procedure
-
-1. Complete notices/attribution/source review, update pinned port/revision if
-   necessary, then build a fresh local candidate in a disposable VM. Use the exact
-   sources/patches and published scripts. Record tool versions and source hashes.
-2. Install/run/remove the new coordinated archives in a separate clean VM; retain
-   acceptance receipts. Inspect candidate source delivery for credentials, private
-   paths, unknown vendor rights and missing native/asset sources.
-3. Approve that EXACT candidate.json digest and licensing evidence in policy. A
-   changed candidate requires fresh approval; compilation never clears licensing.
-4. After owner authorization, sign offline per KEYS.md. `repository.py verify`
-   requires an independently authenticated SHA256 public-key identity.
-5. Prepare a new local testing directory using `repository.py promote SIGNED NEW
-   --channel testing`. It verifies signed files and performs no network operation.
-6. Assemble a complete site bundle with testing and, if already deployed, the
-   unchanged stable channel. No symlinks, devices, executable hooks or unrelated
-   files are allowed. Preserve immutable historical releases/rollback archives.
-7. After explicit publication approval, configure protected publication-review
-   and github-pages environments, Pages Actions deployment and the approved public
-   key fingerprint. Review/enable the inactive deployment workflow example and
-   ENABLE_SIGNED_PUBLICATION. No automatic source-building job gets write access.
-8. Run the publication workflow manually with a reviewed public HTTPS bundle URL
-   and exact SHA256. `fetch-site.py` limits download/extracted size, rejects unsafe
-   members, verifies all channel hashes/package signatures and signed index/source
-   metadata, and fails if an existing stable channel would disappear. It never
-   executes package content or installs packages.
-9. Download the actual public metadata/signatures/key/index/packages, verify all
-   signatures/hashes and perform XBPS remote import/install/remove in a disposable
-   VM. Check the exact native fingerprint prompt, dependency resolution and that
-   services/settings are untouched. Only then write real user installation URLs.
-10. After testing acceptance, promote the SAME signed bytes to stable using
-    `--channel stable --accept-tested-release`. Record its exact candidate digest
-    as stable_approved_candidate_sha256 in policy. Include both channels in the
-    next verified site bundle. Promotion must not recompile/re-sign packages.
-
-Production-environment gates and platform settings are not configured by merely
-committing a YAML file. Ensure required reviewers, no self-approval where possible,
-protected main branch, minimal tokens, and immutable reviewed workflow revisions.
-
-### Updates / rollback
-
-A public package filename/version is immutable. Bump all coordinated revisions for
-changed contents, retain previous packages/signatures/source and test both upgrade
-and downgrade paths. Publish new signatures/assets before replacing the index and
-keep packages referenced by recently cached indices. A Pages deployment is a full
-site replacement; downloading/assembling both verified channels is mandatory.
-
-Rollback redeploys the previously archived complete signed site, then verifies its
-public endpoint. Explain the deliberate old release to users; stock XBPS cannot
-by itself prevent repository replay/freeze. Key compromise requires the separately
-authenticated rotation procedure, not just republishing with the same key.
+Keep historical versioned releases and their matching indexes for an explicit [client rollback](USERS.md#rollback). Pick the verified older set and dry-run a coordinated downgrade. Simply restoring an older index does not downgrade installed packages. The authenticated channel rejects decreasing release versions or sequence numbers, including during a native recovery. Handle a signing-key incident using the independently authenticated [rotation procedure](KEYS.md#rotation-and-incident-response). [Pages limits](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits)

@@ -6,7 +6,7 @@ Start Skwd-wall as your desktop user. If Deck is already running in the session,
 
 ## Installation and updates
 
-[Quick installation](../README.md#quick-installation) describes the proposed native method. It will be available after Pages activation. Use the [authenticated channel](../README.md#authenticated-installation) or the [advanced manual procedure](../README.md#advanced-manual-verification) in the meantime.
+[Quick installation](../README.md#quick-installation) uses the public native repository. The [authenticated channel](../README.md#authenticated-installation) adds signed index and freshness checks. The [advanced manual procedure](../README.md#advanced-manual-verification) verifies a versioned release directly.
 
 Native users update with `sudo xbps-install -Su`. XBPS resolves the exact Wall dependencies for Deck and Paper and updates Lens if it is installed. For authenticated users, run:
 
@@ -20,7 +20,7 @@ Keep a backup of Skwd settings and catalogue data, and retain a previous verifie
 
 Use only one Skwd repository for routine XBPS transactions. Both methods use `/etc/xbps.d/30-skwd-void.conf`. Check for duplicate Skwd declarations in `/etc/xbps.d` and `/usr/share/xbps.d` before switching. Wait for XBPS and synchronization to finish before editing the file.
 
-**Authenticated to native.** This is an explicit choice to use native package signatures without the channel's signed index and freshness checks. After Pages activation, probe the native origin and check its key fingerprint against the independent reference in Quick installation:
+**Authenticated to native.** This is an explicit choice to use native package signatures without the channel's signed index and freshness checks. Probe the native origin and check its key fingerprint against the independent reference in Quick installation:
 
 ```sh
 sudo xbps-install -i -R https://sirotter0.github.io/skwd-void-repo -S

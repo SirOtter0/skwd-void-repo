@@ -14,9 +14,7 @@ Skwd-wall **`1.0.0beta29_2`** is a coordinated community release of Wall, Deck, 
 
 ## Quick installation
 
-**Native XBPS is the recommended method once the Pages repository is enabled.** The proposed origin is `https://sirotter0.github.io/skwd-void-repo/`. Until activation, use [Authenticated installation](#authenticated-installation) or [Advanced manual verification](#advanced-manual-verification).
-
-On Void Linux x86_64 glibc, run the following after activation. The configuration command refuses to overwrite an existing file. If it already contains the native URL, run the install command on its own. If you already use the authenticated channel, follow the [migration instructions](docs/USERS.md#switching-repository-methods) to switch deliberately.
+**Native XBPS is the recommended method.** On Void Linux x86_64 glibc, register the repository and install Wall. The configuration command refuses to overwrite an existing file. If the file already contains the native URL, run the install command on its own. Existing authenticated users can [switch explicitly](docs/USERS.md#switching-repository-methods).
 
 ```sh
 sudo sh -c 'set -C; printf "%s\n" "repository=https://sirotter0.github.io/skwd-void-repo" > /etc/xbps.d/30-skwd-void.conf' &&
