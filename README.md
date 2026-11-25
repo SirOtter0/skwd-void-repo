@@ -10,7 +10,76 @@ Skwd-wall **`1.0.0beta29_2`** is a coordinated community release of Wall, Deck, 
 - **Desktop:** Start Wall and Deck as your regular user inside a Wayland session. Wall requires a working Vulkan implementation. The port was tested on Niri with NVIDIA RTX 4060 Ti. Musl, other architectures and additional GPU and media paths remain outside the verified scope.
 - **Runtime dependencies:** A working Wayland/Vulkan stack plus `alsa-lib`, `fontconfig`, `freetype`, `libdav1d`, `libdrm`, `libgcc`, `libglvnd`, `libva`, `libxkbcommon`, `shaderc`, `vulkan-loader`, `wayland` and `zlib`. The package dry run checks the exact requirements. [Signed dependency inventory](https://github.com/SirOtter0/skwd-void-repo/releases/download/xbps-beta29_2/LICENSE-INVENTORY.json)
 
-## Installation
+<a name="installation"></a>
+
+## Quick installation
+
+Use Bash and the following commands on Void Linux x86_64 glibc. The stable channel currently serves beta29_2. [Advanced verified installation](#advanced-verified-installation) is available for a manual, versioned installation. Compare the helper's SHA-256 and the production key fingerprints listed below with a trusted reference independent of the download server. [Synchronization helper](scripts/sync-channel.py)
+
+```bash
+set -euo pipefail
+sudo xbps-install -S python3 curl openssl ca-certificates coreutils
+stage=$(mktemp -d)
+curl -q --fail --silent --show-error --location \
+    --proto '=https' --proto-redir '=https' \
+    'https://raw.githubusercontent.com/SirOtter0/skwd-void-repo/main/scripts/sync-channel.py' \
+    --output "$stage/skwd-xbps-sync"
+printf '%s  %s\n' '40656bd1eb388842747e37879fd6e48829a874f15da137884d3978f0f5a44f5c' "$stage/skwd-xbps-sync" | sha256sum --strict -c -
+cat "$stage/skwd-xbps-sync"
+```
+
+After reviewing the helper, use the same shell to register the repository.
+
+```bash
+sudo install -d /usr/local/sbin
+sudo install -o root -g root -m 0755 "$stage/skwd-xbps-sync" /usr/local/sbin/skwd-xbps-sync
+sudo /usr/local/sbin/skwd-xbps-sync --configure
+```
+
+Ask XBPS to load the already authenticated local repository. At the key prompt, confirm only if the fingerprint is `cb:49:33:d0:b1:e9:be:a6:3d:85:96:11:04:c4:50:e8` and matches your independent reference.
+
+```sh
+sudo xbps-install -i -R /var/lib/skwd-xbps/current -S
+sudo xbps-install -n -R /var/lib/skwd-xbps/current skwd-wall-v2-local skwd-deck-local skwd-lens-local skwd-paper-local
+```
+
+Review the dry run, then install the four packages and check the package database.
+
+```sh
+sudo xbps-install -R /var/lib/skwd-xbps/current skwd-wall-v2-local skwd-deck-local skwd-lens-local skwd-paper-local
+sudo xbps-pkgdb -a
+```
+
+The helper uses the production fingerprints listed in Advanced verified installation. It authenticates the signed channel and manifest, verifies the index and all four XBPS signatures, and registers the verified local snapshot. Subsequent runs preserve an identical configuration and refuse to replace a different one.
+
+## Updating with XBPS
+
+Back up your Skwd data and retain the previous verified snapshot. Synchronize Skwd before the usual Void update.
+
+```sh
+sudo /usr/local/sbin/skwd-xbps-sync && sudo xbps-install -Su
+```
+
+Running `xbps-install -Su` alone still updates Void and can install Skwd versions already staged locally. XBPS does not download or authenticate a new Skwd snapshot on its own. The sync step stages packages without installing them. Avoid running a separate XBPS transaction while synchronization is in progress. [Update and recovery procedures](docs/USERS.md)
+
+## Running Skwd-wall
+
+In your regular Wayland session, start Deck in a terminal if it is not already running:
+
+```sh
+skwd-walld
+```
+
+In a second terminal of the same session, check the catalogue connection and launch the picker:
+
+```sh
+skwd-helm list --json
+skwd-wall-v2
+```
+
+Paper provides the renderers. Lens is optional for semantic features. The packages do not configure session startup.
+
+## Advanced verified installation
 
 Use Bash, XBPS, curl, OpenSSL and the Void CA bundle. The commands below use `sudo` for package operations. If you administer Void through a root shell, run the marked package commands there with the same verified absolute path. Use trusted official Void repositories to install missing tools:
 
@@ -82,34 +151,13 @@ done
 sudo xbps-pkgdb -a
 ```
 
-## Running Skwd-wall
-
-In your regular Wayland session, start Deck in a terminal if it is not already running:
-
-```sh
-skwd-walld
-```
-
-In a second terminal of the same session, check the catalogue connection and launch the picker:
-
-```sh
-skwd-helm list --json
-skwd-wall-v2
-```
-
-Paper provides the renderers. Lens is optional for semantic features. The packages do not configure session startup.
-
-## Updating
-
-Back up your Skwd data and keep the previous verified package set. Repeat [Installation](#installation) with the new release's authenticated snapshot and all four exact versions. [Update instructions](docs/USERS.md#updating)
-
 ## Uninstalling
 
 Stop the Skwd processes you started. Review the dry run before applying the removal. Package removal leaves your personal data in place. [Removal commands](docs/USERS.md#uninstalling)
 
 ## Rollback
 
-Keep a verified copy of all four previous packages and the matching index. Review the explicit four-package downgrade before applying it. [Rollback commands for beta29_1](docs/USERS.md#rollback)
+Keep a verified copy of all four previous packages and the matching index. Review the explicit four-package downgrade before applying it. [Rollback commands](docs/USERS.md#rollback)
 
 ## Troubleshooting
 
@@ -117,7 +165,7 @@ For a signature or fingerprint mismatch, stop and obtain a fresh copy from the v
 
 ## Security and signing
 
-Verify **`SHA256SUMS.sig` before using the index**. XBPS key metadata identifies the repository key. The additional signed manifest authenticates the index contents, the packages and the source material. Keep installation tied to the verified local files. [Signing and trust model](docs/KEYS.md)
+Verify **`SHA256SUMS.sig` before using the index**. The stable-channel helper performs this check automatically. XBPS key metadata identifies the repository key. The additional signed manifest authenticates the index contents, the packages and the source material. Keep installation tied to the verified local files. [Signing and trust model](docs/KEYS.md) · [Stable channel design](docs/STABLE-CHANNEL.md)
 
 ## Building from source
 

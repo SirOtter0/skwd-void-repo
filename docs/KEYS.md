@@ -70,7 +70,7 @@ The [public beta29_2 release](https://github.com/SirOtter0/skwd-void-repo/releas
 carries four production `.sig2` signatures, repository key metadata, and
 a production signature over `SHA256SUMS`. A clean Void VM authenticated
 the key, manifest and packages downloaded over HTTPS, then installed them
-from the verified snapshot. Follow the [English guide](../README.md#installation)
+from the verified snapshot. Follow the [installation guide](../README.md#advanced-verified-installation)
 and compare both key fingerprints with a trusted independent reference.
 
 ## Rotation and incident response
