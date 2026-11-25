@@ -1,5 +1,11 @@
 # Licensing status
 
+## Current beta29_2 release
+
+The public release includes the [license inventory](https://github.com/SirOtter0/skwd-void-repo/releases/download/xbps-beta29_2/LICENSE-INVENTORY.json) and [corresponding sources](https://github.com/SirOtter0/skwd-void-repo/releases/download/xbps-beta29_2/corresponding-source.tar.xz). See the [installation guide](INSTALLATION.md) for the current distribution methods.
+
+## Historical beta26 review
+
 The initial review identified incomplete dependency notices, optional SDK-source
 questions and FFmpeg delivery requirements. These are now addressed for the
 reviewed beta.26 legal revision1.0.0beta26_4; see the detailed

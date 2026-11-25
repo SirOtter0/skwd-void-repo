@@ -2,7 +2,7 @@
 
 ## Overview
 
-Skwd-wall **`1.0.0beta29_2`** is a coordinated community release of Wall, Deck, Lens and Paper. SirOtter0 maintains the Void packaging externally. [Download beta29_2](https://github.com/SirOtter0/skwd-void-repo/releases/tag/xbps-beta29_2)
+Skwd-wall **`1.0.0beta29_2`** is a coordinated community release of Wall, Deck, Lens and Paper. SirOtter0 maintains the Void packaging externally. [Installation guide](docs/INSTALLATION.md) · [Download beta29_2](https://github.com/SirOtter0/skwd-void-repo/releases/tag/xbps-beta29_2)
 
 ## Compatibility
 
@@ -98,7 +98,7 @@ sudo xbps-install -R /var/lib/skwd-xbps/current skwd-wall-v2-local skwd-deck-loc
 sudo xbps-pkgdb -a
 ```
 
-The helper uses the production fingerprints listed in Advanced verified installation. It authenticates the signed channel and manifest, verifies the index and all four XBPS signatures, and registers the verified local snapshot. Subsequent runs preserve an identical configuration and refuse to replace a different one.
+The helper uses the production fingerprints listed in [Advanced manual verification](#advanced-manual-verification). It authenticates the signed channel and manifest, verifies the index and all four XBPS signatures, and registers the verified local snapshot. Subsequent runs preserve an identical configuration and refuse to replace a different one.
 
 ### Updating the authenticated channel
 

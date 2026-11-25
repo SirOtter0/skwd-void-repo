@@ -1,5 +1,7 @@
 # Redistribution review: coordinated legal revision4
 
+This is the historical beta26_4 redistribution review. For the current release, see the [beta29_2 license inventory](LICENSING.md#current-beta29_2-release).
+
 Reviewed input: beta.26, public port466e95c608b37000491633bdbec6ca801a059714.
 The four original projects are MIT; bundled dependencies/assets retain their own
 licenses. This is evidence for this exact x86_64 glibc configuration, not a blanket
